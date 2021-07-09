@@ -1,0 +1,48 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+/*
+Melek
+TODO: extract colors from design
+example:
+  $variableName: hex-value;
+*/
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 1rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .logo {
+  display: block;
+  width: 5vw;
+  height: 5vw;
+  background-image: url("../assets/logo.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/*# sourceMappingURL=main.css.map */

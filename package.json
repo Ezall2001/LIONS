@@ -1,0 +1,16 @@
+{
+  "name": "Lions_website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "sass --watch ./public/scss:./public/css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "sass": "^1.35.2"
+  }
+}

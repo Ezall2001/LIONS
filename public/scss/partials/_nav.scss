@@ -1,0 +1,16 @@
+@use "./config"as *;
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  // background: linear-gradient(to bottom, $blue-filter);
+  padding: 1rem 1rem;
+  @include flexy('x', space-between);
+
+  .logo {
+    @include square(5vw);
+    @include img-background('../assets/logo.png');
+  }
+}

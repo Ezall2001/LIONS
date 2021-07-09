@@ -1,0 +1,22 @@
+auth 
+email service
+mobile friendly ?
+event history -> event details -> blog
+admin 
+upcoming event
+members
+contactus
+
+
+about page
+hero
+
+landing page: 
+  - sticky nav
+  - sticky bring to top button
+  - scroll animation
+
+nav -> about register/login contact event 
+
+
+css scroll on landing page

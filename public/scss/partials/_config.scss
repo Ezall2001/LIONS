@@ -1,0 +1,94 @@
+@use "sass:map";
+@use "sass:list";
+
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+$blue-filter:((#001E8C, #425496, #FFFFFF),
+  (1, .53, 0),
+  (1, .4, 0));
+
+
+@mixin flexy($direction:'x', $align:center) {
+  display: flex;
+  flex-wrap: wrap;
+
+  @if $direction=='x' {
+    flex-direction: row;
+    justify-content: $align;
+    align-items: center;
+  }
+
+  @else if $direction=='y' {
+    flex-direction: column;
+    justify-content: center;
+    align-items: $align;
+  }
+
+  @else {
+    @warn "first argument must be either 'x' or 'y'";
+  }
+}
+
+@mixin img-background($url, $pos:center) {
+  background-image: url($url);
+  background-position: $pos;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@mixin square($width) {
+  display: block;
+  width: $width;
+  height: $width;
+}
+
+@mixin apply-gradient($direction:right, $gradient...) {
+  $lists: list.nth($gradient, 1);
+
+  $colors: list.nth($lists, 1);
+  $opacities: list.nth($lists, 2);
+  $breakpoints: list.nth($lists, 3);
+
+  $color-num: list.length($colors);
+
+  $syntax: 'to #{$direction},';
+
+
+  @for $i from 1 through $color-num {
+    $color: list.nth($colors, $i);
+    $opacity: list.nth($lists, 2);
+    $breakpoints: list.nth($lists, 3);
+
+    // $syntax: '#{syntax} #'
+  }
+
+  @debug $syntax;
+}
+
+@include apply-gradient(right, $blue-filter);
+
+
+/*
+Melek
+TODO: extract colors from design
+example:
+  $variableName: hex-value;
+*/
