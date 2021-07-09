@@ -1,16 +1,41 @@
 @use "./config"as *;
+@use "sass:list";
+
+$logo-width: 8vw;
+$nav-padding:(1rem 5rem);
+
 
 nav {
+  @include apply-gradient(bottom, $blue-filter);
+  @include flexy('x', space-between);
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
-  // background: linear-gradient(to bottom, $blue-filter);
-  padding: 1rem 1rem;
-  @include flexy('x', space-between);
+  padding: $nav-padding;
+
 
   .logo {
-    @include square(5vw);
+    @include square($logo-width);
     @include img-background('../assets/logo.png');
+  }
+
+  ul {
+    $ul-width:calc(100vw - #{$logo-width} - #{list.nth($nav-padding, 2)*2});
+
+    @include flexy('x', flex-end);
+    width: $ul-width;
+
+    li {
+      margin-left: 4rem;
+      font-size: 1.5rem;
+
+      //TODO: add hover animation
+    }
+
+    a {
+      color: $white;
+      padding: .5rem;
+    }
   }
 }

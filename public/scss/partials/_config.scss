@@ -1,15 +1,24 @@
 @use "sass:map";
 @use "sass:list";
 
+$blue-filter:((#001E8C, #425496, #FFFFFF),
+  (1, .53, 0),
+  (0%, 60%, 100%));
+
+$fonts:("Helvetica Neue LT Com", sans-serif);
+$white:#FFFFFF;
+
 
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
   width: 100vw;
   overflow-x: hidden;
+  font-family: $fonts;
 }
 
 a {
@@ -21,9 +30,6 @@ li {
   list-style: none;
 }
 
-$blue-filter:((#001E8C, #425496, #FFFFFF),
-  (1, .53, 0),
-  (1, .4, 0));
 
 
 @mixin flexy($direction:'x', $align:center) {
@@ -60,6 +66,10 @@ $blue-filter:((#001E8C, #425496, #FFFFFF),
   height: $width;
 }
 
+@function hex-to-rgba($hex-color, $opacity) {
+  @return rgba($hex-color, $opacity);
+}
+
 @mixin apply-gradient($direction:right, $gradient...) {
   $lists: list.nth($gradient, 1);
 
@@ -67,23 +77,33 @@ $blue-filter:((#001E8C, #425496, #FFFFFF),
   $opacities: list.nth($lists, 2);
   $breakpoints: list.nth($lists, 3);
 
+
   $color-num: list.length($colors);
+
+
 
   $syntax: 'to #{$direction},';
 
 
   @for $i from 1 through $color-num {
     $color: list.nth($colors, $i);
-    $opacity: list.nth($lists, 2);
-    $breakpoints: list.nth($lists, 3);
+    $opacity: list.nth($opacities, $i);
+    $breakpoint: list.nth($breakpoints, $i);
 
-    // $syntax: '#{syntax} #'
+    $rgba-color: hex-to-rgba($color, $opacity);
+
+    $syntax: '#{$syntax} #{$rgba-color} #{$breakpoint}';
+
+    @if $i !=$color-num {
+      $syntax: '#{$syntax},';
+    }
+
   }
 
-  @debug $syntax;
+  background:linear-gradient(#{$syntax});
 }
 
-@include apply-gradient(right, $blue-filter);
+
 
 
 /*

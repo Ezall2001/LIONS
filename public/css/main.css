@@ -1,11 +1,13 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
   width: 100vw;
   overflow-x: hidden;
+  font-family: "Helvetica Neue LT Com", sans-serif;
 }
 
 a {
@@ -24,25 +26,42 @@ example:
   $variableName: hex-value;
 */
 nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  padding: 1rem 1rem;
+  background: linear-gradient(to bottom, #001e8c 0%, rgba(66, 84, 150, 0.53) 60%, rgba(255, 255, 255, 0) 100%);
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 1rem 5rem;
 }
 nav .logo {
   display: block;
-  width: 5vw;
-  height: 5vw;
+  width: 8vw;
+  height: 8vw;
   background-image: url("../assets/logo.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: calc(100vw - 8vw - 10rem);
+}
+nav ul li {
+  margin-left: 4rem;
+  font-size: 1.5rem;
+}
+nav ul a {
+  color: #FFFFFF;
+  padding: 0.5rem;
 }
 
 /*# sourceMappingURL=main.css.map */
