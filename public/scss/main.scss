@@ -1,3 +1,10 @@
 @use "./partials/nav";
 @use "./partials/header";
+@use "./partials/footer";
+@use "./partials/about-section";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+nav,
+header {
+  display: none; //TODO: delete this
+}

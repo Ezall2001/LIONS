@@ -1,0 +1,55 @@
+@use "./config"as *;
+
+footer {
+  @include flexy('x', space-between);
+  width: 100vw;
+  padding: 1rem 3rem;
+  background-color: $footer-color;
+  color: $white;
+
+  .logo {
+    @include flexy('x', center);
+    padding: 2rem;
+
+    img {
+      width: 15vh;
+      margin-right: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+
+      font: {
+        size: 2rem;
+        weight: 400;
+      }
+
+      span {
+        font: {
+          size: 3rem;
+          weight: 400;
+        }
+      }
+    }
+  }
+
+  .rights {
+    align-self: flex-end;
+    text-align: center;
+    font-weight: 300;
+  }
+
+  .social {
+    .container {
+      @include flexy('x', center);
+      margin-bottom: 1rem;
+      font-weight: 300;
+
+      i {
+        font-size: .9rem;
+        margin-right: .7rem;
+      }
+
+    }
+  }
+}

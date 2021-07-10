@@ -1,0 +1,42 @@
+@use "./config"as *;
+
+section.about {
+  padding: 4rem 0;
+  //TODO: add the lion head
+
+  .text {
+    width: 50vw;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+
+    h1 {
+      color: $blue;
+      margin-bottom: .7rem;
+
+      font: {
+        size: 2rem;
+        weight: 400;
+      }
+
+    }
+
+    p {
+      color: $grey;
+      font-size: 1.2rem;
+    }
+  }
+
+  .board {
+    width: 70vw;
+    margin: 0 auto;
+
+    h2 {
+      color: $light-blue;
+
+      font: {
+        size: 1.5rem;
+        weight: 300;
+      }
+    }
+  }
+}

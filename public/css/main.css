@@ -122,4 +122,88 @@ header .welcome button {
   font-weight: 300;
 }
 
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  padding: 1rem 3rem;
+  background-color: #223E7C;
+  color: #FFFFFF;
+}
+footer .logo {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+footer .logo img {
+  width: 15vh;
+  margin-right: 2rem;
+}
+footer .logo h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 400;
+}
+footer .logo h1 span {
+  font-size: 3rem;
+  font-weight: 400;
+}
+footer .rights {
+  align-self: flex-end;
+  text-align: center;
+  font-weight: 300;
+}
+footer .social .container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+footer .social .container i {
+  font-size: 0.9rem;
+  margin-right: 0.7rem;
+}
+
+section.about {
+  padding: 4rem 0;
+}
+section.about .text {
+  width: 50vw;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+}
+section.about .text h1 {
+  color: #2A448D;
+  margin-bottom: 0.7rem;
+  font-size: 2rem;
+  font-weight: 400;
+}
+section.about .text p {
+  color: #707070;
+  font-size: 1.2rem;
+}
+section.about .board {
+  width: 70vw;
+  margin: 0 auto;
+}
+section.about .board h2 {
+  color: #2a448da6;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+nav,
+header {
+  display: none;
+}
+
 /*# sourceMappingURL=main.css.map */
