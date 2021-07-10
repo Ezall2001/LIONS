@@ -1,12 +1,16 @@
 @use "sass:map";
 @use "sass:list";
 
+// TODO: redestribute variables
 $blue-filter:((#001E8C, #425496, #FFFFFF),
   (1, .53, 0),
-  (0%, 60%, 100%));
-
-$fonts:("Helvetica Neue LT Com", sans-serif);
+  (-10%, 60%, 100%));
+$header-filter:(#1900FF, .42);
+$action-color:#F4D108;
 $white:#FFFFFF;
+
+//TODO: add Helvetica font
+$fonts:("Helvetica Neue LT Com", "Roboto", sans-serif);
 
 
 * {
@@ -101,6 +105,24 @@ li {
   }
 
   background:linear-gradient(#{$syntax});
+}
+
+@mixin apply-filter($color:null, $blend:noraml) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: $blend;
+
+  @if$color  !=null {
+    background-color: list.nth($color, 1);
+    opacity: list.nth($color, 2);
+  }
+
+  @else {
+    @content;
+  }
 }
 
 

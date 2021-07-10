@@ -11,6 +11,7 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 3;
   width: 100vw;
   padding: $nav-padding;
 
@@ -27,8 +28,12 @@ nav {
     width: $ul-width;
 
     li {
-      margin-left: 4rem;
-      font-size: 1.5rem;
+      margin-left: 5rem;
+
+      font: {
+        size: 1.5rem;
+        weight: 300;
+      }
 
       //TODO: add hover animation
     }
