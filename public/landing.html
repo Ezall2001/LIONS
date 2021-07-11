@@ -183,17 +183,22 @@
 
       <section class="contact">
 
+        <img class="background" src="./assets/lion_background_left.png"
+          alt="lion head as the background of the section">
+
         <div class="text">
-          <h1></h1>
-          <p></p>
+          <h1>Contact</h1>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
         </div>
 
-        <form action="">
+        <form action="" method="POST">
           <div class="first-row">
-            <input type="email" name="" id="">
-            <input:phone></input:phone>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="tel" name="phone" placeholder="Phone" required>
           </div>
-          <input type="text" name="" id="">
+          <textarea name="message" placeholder="Write your message here" rows="7" required></textarea>
+
+          <button type="submit">Send</button>
         </form>
       </section>
 

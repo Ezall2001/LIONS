@@ -1,0 +1,75 @@
+@use "./config"as *;
+@use "./landing_mixins"as *;
+
+
+section.contact {
+  width: 100vw;
+  padding: 4rem 0;
+  position: relative;
+  background-color: $white;
+  overflow-y: hidden;
+
+  &>* {
+    position: relative;
+    z-index: 2;
+  }
+
+  .background {
+    @include section-lion;
+
+  }
+
+  .text {
+    @include section-text;
+  }
+
+
+  form {
+    @include flexy('y', center);
+    width: 30%;
+    margin: auto;
+
+    input,
+    textarea {
+      padding: .6rem 1rem;
+      background-color: $input-background;
+      border: 1px solid $grey;
+      font-size: 1rem;
+
+      &::placeholder {
+        color: $input-placeholder;
+      }
+    }
+
+    .first-row {
+      @include flexy('x', space-between);
+      width: 100%;
+      margin-bottom: 1rem;
+
+
+      input[type=email] {
+        width: 60%;
+      }
+
+      input[type=tel] {
+        width: 37%;
+      }
+    }
+
+    textarea {
+      font-family: $fonts;
+      width: 100%;
+      margin-bottom: 1.3rem;
+      resize: none;
+    }
+
+    button {
+      align-self: flex-end;
+      padding: .6rem 2.4rem;
+      border: 1px solid $grey;
+      background-color: $action-color;
+      color: $white;
+      cursor: pointer;
+    }
+  }
+}

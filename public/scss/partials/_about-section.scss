@@ -4,6 +4,13 @@
 section.about {
   padding: 4rem 0;
   position: relative;
+  background-color: $white;
+  overflow: hidden;
+
+  &>* {
+    position: relative;
+    z-index: 2;
+  }
 
   .background {
     @include section-lion;

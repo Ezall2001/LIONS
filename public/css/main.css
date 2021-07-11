@@ -182,6 +182,12 @@ footer .social .container i {
 section.about {
   padding: 4rem 0;
   position: relative;
+  background-color: #FFFFFF;
+  overflow: hidden;
+}
+section.about > * {
+  position: relative;
+  z-index: 2;
 }
 section.about .background {
   position: absolute;
@@ -315,6 +321,11 @@ section.events {
   padding: 4rem 0;
   position: relative;
   background-color: #E8E8E8;
+  overflow: hidden;
+}
+section.events > * {
+  position: relative;
+  z-index: 2;
 }
 section.events .background {
   position: absolute;
@@ -438,10 +449,86 @@ section.events .carousel-container .slick-next {
   color: #04007E;
 }
 
-nav,
-header,
-footer {
-  display: none;
+section.contact {
+  width: 100vw;
+  padding: 4rem 0;
+  position: relative;
+  background-color: #FFFFFF;
+  overflow-y: hidden;
+}
+section.contact > * {
+  position: relative;
+  z-index: 2;
+}
+section.contact .background {
+  position: absolute;
+  top: 2vh;
+  max-height: 100vh;
+  left: -10vw;
+}
+section.contact .text {
+  width: 50vw;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+}
+section.contact .text h1 {
+  color: #2A448D;
+  margin-bottom: 0.7rem;
+  font-size: 2rem;
+  font-weight: 400;
+}
+section.contact .text p {
+  color: #707070;
+  font-size: 1.2rem;
+}
+section.contact form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  margin: auto;
+}
+section.contact form input,
+section.contact form textarea {
+  padding: 0.6rem 1rem;
+  background-color: #F3F3F3;
+  border: 1px solid #707070;
+  font-size: 1rem;
+}
+section.contact form input::placeholder,
+section.contact form textarea::placeholder {
+  color: #A5A5A5;
+}
+section.contact form .first-row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+section.contact form .first-row input[type=email] {
+  width: 60%;
+}
+section.contact form .first-row input[type=tel] {
+  width: 37%;
+}
+section.contact form textarea {
+  font-family: "Helvetica Neue LT Com", "Roboto", sans-serif;
+  width: 100%;
+  margin-bottom: 1.3rem;
+  resize: none;
+}
+section.contact form button {
+  align-self: flex-end;
+  padding: 0.6rem 2.4rem;
+  border: 1px solid #707070;
+  background-color: #F4D108;
+  color: #FFFFFF;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=main.css.map */
