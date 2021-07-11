@@ -16,11 +16,13 @@
     <nav>
       <div class="logo"></div>
       <ul>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Events</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="about">About</a></li>
+        <li><a href="events">Events</a></li>
+        <li><a href="contact">Contact</a></li>
       </ul>
     </nav>
+
+
 
     <header>
       <div class="caroussel">
@@ -41,9 +43,15 @@
       <div class="scroll-down"></div>
     </header>
 
-    <!-- TODO: add scroll down and carousell -->
+    <!-- TODO: add carousell -->
 
     <main>
+
+      <aside class="scroll-nav">
+        <div class="scroll-dot active" data-section="about" data-tooltip="About"></div>
+        <div class="scroll-dot" data-section="events" data-tooltip="Events"></div>
+        <div class="scroll-dot" data-section="contact" data-tooltip="Contact"></div>
+      </aside>
 
       <section class="about">
 
@@ -237,6 +245,7 @@
       <!-- TODO: make the social links -->
       <script src="../node_modules/slick-carousel/slick/slick.min.js"></script>
       <script src="./app/carousel.js"></script>
+      <script src="./app/scroll-nav.js"></script>
     </footer>
 
   </body>

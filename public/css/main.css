@@ -27,7 +27,7 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 3;
@@ -59,6 +59,62 @@ nav ul li {
 nav ul a {
   color: #FFFFFF;
   padding: 0.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.scroll-nav {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 0.5rem;
+  height: 60vh;
+  padding: 5vh 0;
+  position: sticky;
+  float: right;
+  top: 20vh;
+  z-index: 3;
+  border-radius: 1rem;
+  background-color: #d7d8df;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  margin-left: 0;
+  margin-right: 2.5rem;
+}
+.scroll-nav .scroll-dot {
+  display: block;
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: #aaa8ad;
+  border-radius: 50%;
+  transform: translateX(-0.15rem);
+  cursor: pointer;
+  position: relative;
+}
+.scroll-nav .scroll-dot:hover {
+  background-color: royalblue;
+}
+.scroll-nav .scroll-dot:hover::before {
+  color: royalblue;
+}
+.scroll-nav .scroll-dot::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 50%;
+  right: 1.8rem;
+  transform: translateY(-50%);
+  color: rgba(128, 128, 128, 0.397);
+}
+.scroll-nav .scroll-dot.active {
+  background-color: royalblue;
+}
+.scroll-nav .scroll-dot.active::before {
+  color: royalblue;
 }
 
 header {
@@ -529,6 +585,14 @@ section.contact form button {
   background-color: #F4D108;
   color: #FFFFFF;
   cursor: pointer;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -8,13 +8,14 @@ $nav-padding:(1rem 5rem);
 nav {
   @include apply-gradient(bottom, $blue-filter);
   @include flexy('x', space-between);
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 3;
   width: 100vw;
   padding: $nav-padding;
-
+  //TODO: add paralex
+  //TODO: make the mobile version
 
   .logo {
     @include square($logo-width);

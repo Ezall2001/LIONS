@@ -1,0 +1,66 @@
+@use "./config"as *;
+@use "sass:math";
+
+html {
+  scroll-behavior: smooth;
+}
+
+.scroll-nav {
+  $dots-width: .8rem;
+  $scroll-bar-width: .5rem;
+
+  @include flexy('y', center);
+  justify-content: space-between;
+  width: $scroll-bar-width;
+  height: 60vh;
+  padding: 5vh 0;
+  position: sticky;
+  float: right;
+  top: 20vh;
+  z-index: 3;
+  border-radius: 1rem;
+  background-color: #d7d8df;
+
+  margin: {
+    top: 4rem;
+    bottom: 4rem;
+    left: 0;
+    right: 2.5rem;
+  }
+
+  .scroll-dot {
+    @include square($dots-width);
+    background-color: rgb(170, 168, 173);
+    border-radius: 50%;
+    transform: translateX(- math.div($dots-width - $scroll-bar-width, 2));
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+      background-color: royalblue;
+
+      &::before {
+        color: royalblue;
+      }
+    }
+
+    &::before {
+      content: attr(data-tooltip);
+      position: absolute;
+      top: 50%;
+      right: $dots-width+1rem;
+      transform: translateY(-50%);
+      color: rgba(128, 128, 128, 0.397);
+    }
+
+    &.active {
+      background-color: royalblue;
+
+      &::before {
+        color: royalblue;
+      }
+    }
+
+
+  }
+}
