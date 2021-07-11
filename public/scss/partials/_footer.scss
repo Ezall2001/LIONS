@@ -3,13 +3,15 @@
 footer {
   @include flexy('x', space-between);
   width: 100vw;
-  padding: 1rem 3rem;
+  padding: 1rem 6rem;
   background-color: $footer-color;
   color: $white;
 
   .logo {
-    @include flexy('x', center);
-    padding: 2rem;
+    @include flexy('x', flex-start);
+    width: 33.33%;
+    padding: 2rem 0;
+
 
     img {
       width: 15vh;
@@ -34,16 +36,23 @@ footer {
   }
 
   .rights {
+    width: 33.33%;
     align-self: flex-end;
     text-align: center;
     font-weight: 300;
   }
 
   .social {
+    width: 33.33%;
+    @include flexy('y', flex-end);
+
     .container {
       @include flexy('x', center);
-      margin-bottom: 1rem;
       font-weight: 300;
+
+      &:not(&:nth-of-type(3)) {
+        margin-bottom: 1rem;
+      }
 
       i {
         font-size: .9rem;

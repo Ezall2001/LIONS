@@ -1,26 +1,9 @@
 @use "sass:map";
 @use "sass:list";
+@use "sass:math";
+@use "./global_var"as *;
+@forward "./global_var";
 
-// TODO: redestribute variables
-$blue-filter:((#001E8C, #425496, #FFFFFF),
-  (1, .53, 0),
-  (-10%, 60%, 100%));
-$card-filter:((#FFFFFF, #050980),
-  (0, 1),
-  (10%, 110%));
-
-$header-filter:(#1900FF, .42);
-$action-color:#F4D108;
-$white:#FFFFFF;
-$blue:#2A448D;
-$footer-color:#223E7C;
-$light-blue:#2a448da6;
-$grey:#707070;
-$dots-color:#8C8C8C;
-$arrow-color:#04007E;
-
-//TODO: add Helvetica font
-$fonts:("Helvetica Neue LT Com", "Roboto", sans-serif);
 
 
 * {
@@ -42,6 +25,10 @@ a {
 ul,
 li {
   list-style: none;
+}
+
+@function hex-to-rgba($hex-color, $opacity) {
+  @return rgba($hex-color, $opacity);
 }
 
 
@@ -80,9 +67,7 @@ li {
   height: $width;
 }
 
-@function hex-to-rgba($hex-color, $opacity) {
-  @return rgba($hex-color, $opacity);
-}
+
 
 @mixin apply-gradient($direction:right, $gradient...) {
   $lists: list.nth($gradient, 1);
@@ -134,13 +119,3 @@ li {
     @content;
   }
 }
-
-
-
-
-/*
-Melek
-TODO: extract colors from design
-example:
-  $variableName: hex-value;
-*/

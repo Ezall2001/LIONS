@@ -20,12 +20,6 @@ li {
   list-style: none;
 }
 
-/*
-Melek
-TODO: extract colors from design
-example:
-  $variableName: hex-value;
-*/
 nav {
   background: linear-gradient(to bottom, #001e8c -10%, rgba(66, 84, 150, 0.53) 60%, rgba(255, 255, 255, 0) 100%);
   display: flex;
@@ -129,7 +123,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   width: 100vw;
-  padding: 1rem 3rem;
+  padding: 1rem 6rem;
   background-color: #223E7C;
   color: #FFFFFF;
 }
@@ -137,9 +131,10 @@ footer .logo {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  padding: 2rem;
+  width: 33.33%;
+  padding: 2rem 0;
 }
 footer .logo img {
   width: 15vh;
@@ -155,9 +150,18 @@ footer .logo h1 span {
   font-weight: 400;
 }
 footer .rights {
+  width: 33.33%;
   align-self: flex-end;
   text-align: center;
   font-weight: 300;
+}
+footer .social {
+  width: 33.33%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
 }
 footer .social .container {
   display: flex;
@@ -165,8 +169,10 @@ footer .social .container {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
   font-weight: 300;
+}
+footer .social .container:not(footer .social .container:nth-of-type(3)) {
+  margin-bottom: 1rem;
 }
 footer .social .container i {
   font-size: 0.9rem;
@@ -175,6 +181,13 @@ footer .social .container i {
 
 section.about {
   padding: 4rem 0;
+  position: relative;
+}
+section.about .background {
+  position: absolute;
+  top: 2vh;
+  max-height: 100vh;
+  left: -10vw;
 }
 section.about .text {
   width: 50vw;
@@ -191,24 +204,18 @@ section.about .text p {
   color: #707070;
   font-size: 1.2rem;
 }
-section.about .board {
+section.about .carousel-container {
   width: 70vw;
   margin: 0 auto;
 }
-section.about .board h2 {
-  color: #2a448da6;
-  margin-bottom: 2rem;
-  font-size: 1.5rem;
-  font-weight: 300;
-}
-section.about .board .carousel {
+section.about .carousel-container .carousel {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-section.about .board .card {
+section.about .carousel-container .card {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -224,18 +231,13 @@ section.about .board .card {
   position: relative;
   overflow: hidden;
   padding-bottom: 3rem;
-  margin: 0 2rem;
+  margin: 0 3rem;
   transition: transform 1s ease-in-out;
 }
-section.about .board .card-highlight-center {
+section.about .carousel-container .card-highlight-center {
   transform: scale(1.2);
 }
-section.about .board .card-highlight-sides {
-  width: 13vw;
-  height: calc(1.4324324324 * 13vw);
-  visibility: visible;
-}
-section.about .board .card-filter {
+section.about .carousel-container .card-filter {
   position: absolute;
   top: 0;
   left: 0;
@@ -244,20 +246,20 @@ section.about .board .card-filter {
   mix-blend-mode: noraml;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 10%, #050980 110%);
 }
-section.about .board .card-title {
+section.about .carousel-container .card-title {
   width: 70%;
   z-index: 3;
 }
-section.about .board .card-title h1 {
+section.about .carousel-container .card-title h1 {
   color: #FFFFFF;
   margin-bottom: 0.7rem;
   font-weight: 300;
 }
-section.about .board .card-title p {
+section.about .carousel-container .card-title p {
   color: #FFFFFF;
   opacity: 0.38;
 }
-section.about .board .dots {
+section.about .carousel-container .dots {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -266,7 +268,7 @@ section.about .board .dots {
   width: 100%;
   margin-top: 2rem;
 }
-section.about .board .dots li button {
+section.about .carousel-container .dots li button {
   display: block;
   width: 0.7rem;
   height: 0.7rem;
@@ -276,35 +278,169 @@ section.about .board .dots li button {
   margin: 0 0.3rem;
   border-radius: 50%;
 }
-section.about .board .dots li button:hover {
+section.about .carousel-container .dots li button:hover {
   border: 3px solid #2A448D;
 }
-section.about .board .dots .slick-active button {
+section.about .carousel-container .dots .slick-active button {
   background-color: #2A448D;
 }
-section.about .board .slick-list {
-  width: 75%;
+section.about .carousel-container .slick-list {
+  width: 80%;
   padding: 2rem 0 !important;
 }
-section.about .board .slick-prev,
-section.about .board .slick-next {
+section.about .carousel-container .slick-prev,
+section.about .carousel-container .slick-next {
   display: block;
   width: 2rem;
   height: 2rem;
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-  font-size: 3rem;
-  color: #04007E;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-size: 3rem;
+  color: #04007E;
+}
+section.about .carousel-container h2 {
+  color: #2a448da6;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+section.events {
+  padding: 4rem 0;
+  position: relative;
+  background-color: #E8E8E8;
+}
+section.events .background {
+  position: absolute;
+  top: 2vh;
+  max-height: 100vh;
+  right: -10vw;
+}
+section.events .text {
+  width: 50vw;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+}
+section.events .text h1 {
+  color: #2A448D;
+  margin-bottom: 0.7rem;
+  font-size: 2rem;
+  font-weight: 400;
+}
+section.events .text p {
+  color: #707070;
+  font-size: 1.2rem;
+}
+section.events .carousel-container {
+  width: 70vw;
+  margin: 0 auto;
+}
+section.events .carousel-container .carousel {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+section.events .carousel-container .card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../assets/card1.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  align-items: flex-end;
+  height: calc(1.4324324324 * 13vw);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 3rem;
+  margin: 0 3rem;
+  transition: transform 1s ease-in-out;
+}
+section.events .carousel-container .card-highlight-center {
+  transform: scale(1.2);
+}
+section.events .carousel-container .card-filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: noraml;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 10%, #050980 110%);
+}
+section.events .carousel-container .card-title {
+  width: 70%;
+  z-index: 3;
+}
+section.events .carousel-container .card-title h1 {
+  color: #FFFFFF;
+  margin-bottom: 0.7rem;
+  font-weight: 300;
+}
+section.events .carousel-container .card-title p {
+  color: #FFFFFF;
+  opacity: 0.38;
+}
+section.events .carousel-container .dots {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+}
+section.events .carousel-container .dots li button {
+  display: block;
+  width: 0.7rem;
+  height: 0.7rem;
+  cursor: pointer;
+  border: none;
+  background-color: #8C8C8C;
+  margin: 0 0.3rem;
+  border-radius: 50%;
+}
+section.events .carousel-container .dots li button:hover {
+  border: 3px solid #2A448D;
+}
+section.events .carousel-container .dots .slick-active button {
+  background-color: #2A448D;
+}
+section.events .carousel-container .slick-list {
+  width: 80%;
+  padding: 2rem 0 !important;
+}
+section.events .carousel-container .slick-prev,
+section.events .carousel-container .slick-next {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-size: 3rem;
+  color: #04007E;
 }
 
 nav,
-header {
+header,
+footer {
   display: none;
 }
 

@@ -1,0 +1,142 @@
+@use "./config"as *;
+@use "sass:math";
+
+@mixin section-lion($align:left) {
+  position: absolute;
+  top: 2vh;
+  max-height: 100vh;
+
+  @if $align==left {
+    left: -10vw;
+  }
+
+  @else if $align==right {
+    right: -10vw;
+  }
+}
+
+@mixin section-text {
+  width: 50vw;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+
+  h1 {
+    color: $blue;
+    margin-bottom: .7rem;
+
+    font: {
+      size: 2rem;
+      weight: 400;
+    }
+
+  }
+
+  p {
+    color: $grey;
+    font-size: 1.2rem;
+  }
+}
+
+
+@mixin section-carousel {
+  width: 70vw;
+  margin: 0 auto;
+
+
+
+  .carousel {
+    @include flexy('x', center);
+  }
+
+  //TODO: add the selected card animation
+  .card {
+    $card-width: 13vw;
+    $center-card-width: $card-width + 5vw;
+
+    @include flexy('x', center);
+    @include img-background('../assets/card1.jpg', center);
+    align-items: flex-end;
+    //TODO: fix the width and the aspect ratio or whatever
+    // width: $card-width;
+    height: calc(#{math.div(530,370)} * #{$card-width});
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 3rem;
+    margin: 0 3rem;
+    transition: transform 1s ease-in-out;
+
+    &-highlight-center {
+      transform: scale(1.2);
+    }
+
+
+    // TODO: add shadows
+
+    &-filter {
+      @include apply-filter($blend:noraml) {
+        @include apply-gradient(bottom, $card-filter)
+      }
+    }
+
+    &-title {
+      width: 70%;
+      z-index: 3;
+
+      h1 {
+        color: $white;
+        margin-bottom: .7rem;
+
+        font: {
+          weight: 300;
+        }
+      }
+
+      p {
+        color: $white;
+        opacity: .38;
+      }
+    }
+  }
+
+
+
+  .dots {
+    @include flexy('x', center);
+    width: 100%;
+    margin-top: 2rem;
+
+    li button {
+      @include square(.7rem);
+      cursor: pointer;
+      border: none;
+      background-color: $dots-color;
+      margin: 0 .3rem;
+      border-radius: 50%;
+
+      &:hover {
+        border: 3px solid $blue;
+      }
+    }
+
+    .slick-active button {
+      background-color: $blue;
+    }
+  }
+
+  .slick-list {
+    width: 80%;
+    padding: 2rem 0 !important;
+  }
+
+  .slick-prev,
+  .slick-next {
+    @include square(2rem);
+    @include flexy('y', flex-start);
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 3rem;
+    color: $arrow-color;
+  }
+}

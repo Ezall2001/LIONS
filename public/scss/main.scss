@@ -2,9 +2,11 @@
 @use "./partials/header";
 @use "./partials/footer";
 @use "./partials/about-section";
+@use "./partials/events-section";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
 nav,
-header {
+header,
+footer {
   display: none; //TODO: delete this
 }

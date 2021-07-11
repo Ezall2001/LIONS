@@ -1,12 +1,13 @@
 @use "./config"as *;
 @use "./landing_mixins"as *;
 
-section.about {
+section.events {
   padding: 4rem 0;
   position: relative;
+  background-color: $events-section-color;
 
   .background {
-    @include section-lion;
+    @include section-lion(right);
   }
 
   .text {
@@ -15,16 +16,5 @@ section.about {
 
   .carousel-container {
     @include section-carousel;
-
-    h2 {
-      color: $light-blue;
-      margin-bottom: 2rem;
-
-      font: {
-        size: 1.5rem;
-        weight: 400;
-      }
-
-    }
   }
 }
