@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="../node_modules/slick-carousel/slick/slick.css" />
     <script src="https://kit.fontawesome.com/c6ffe9a48e.js" crossorigin="anonymous"></script>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>LIONS</title>
   </head>
 
@@ -16,13 +18,12 @@
     <nav>
       <div class="logo"></div>
       <ul>
-        <li><a href="about">About</a></li>
-        <li><a href="events">Events</a></li>
-        <li><a href="contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#">Board</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-
-
 
     <header>
       <div class="caroussel">
@@ -36,22 +37,16 @@
           </h1>
         </div>
         <div class="call-to-action">
-          <button>CONTACT US</button>
+          <button href="#contact">CONTACT US</button>
         </div>
       </div>
 
       <div class="scroll-down"></div>
     </header>
 
-    <!-- TODO: add carousell -->
+    <!-- TODO: add scroll down and carousell -->
 
     <main>
-
-      <aside class="scroll-nav">
-        <div class="scroll-dot active" data-section="about" data-tooltip="About"></div>
-        <div class="scroll-dot" data-section="events" data-tooltip="Events"></div>
-        <div class="scroll-dot" data-section="contact" data-tooltip="Contact"></div>
-      </aside>
 
       <section class="about">
 
@@ -60,69 +55,109 @@
 
         <div class="text">
           <h1>About Us</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil officiis dolore tempora enim quis possimus
-            unde, eos animi quibusdam doloribus est nostrum corrupti voluptatum doloremque quia maxime
+          <p>
+            Le Lions Club Sirius Ariana répond aux besoins des communautés locales, tout en servant notre pays, et cela pour répondre aux besoins humanitaires, encourager la paix et promouvoir la compréhension internationale à travers les Lions club
           </p>
         </div>
 
         <div class="carousel-container">
           <h2>Our Board</h2>
-          <div class="carousel">
-
-            <div class="card">
-              <div class="card-filter"></div>
-              <div class="card-title">
-                <h1>HCHICHA Nassim</h1>
-                <p>President du Club</p>
+          <div class="team-grid">
+            <div class="container">
+               
+                <div class="row people d-flex justify-content-center">
+                    <div class="col-md-4 col-lg-3 item">
+                        <div class="box" style="background-image:url(assets/team/1.jpg)">
+                            <div class="cover">
+                                <h3 class="name">Ben Aissia Bahe</h3>
+                                <p class="title">Vice-Président</p>
+                                <div class="social"><a href="https://www.facebook.com/zak.saif.7"><i class="fa fa-facebook-official"></i></a><a href="https://www.instagram.com/bahabenaissia/?hl=fr"target="_blank"><i class="fa fa-instagram"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 item">
+                        <div class="box" style="background-image:url(assets/team/2.jpg)">
+                            <div class="cover">
+                                <h3 class="name">Khaled Nassim Hachicha</h3>
+                                <p class="title">Président</p>
+                                <div class="social"><a href="https://www.facebook.com/ahmedkhalil.hachicha.1"><i class="fa fa-facebook-official"></i></a><a href="#"></a></i></a><a href="https://www.instagram.com/nh_nassim_hachicha/?hl=fr"target="_blank"><i class="fa fa-instagram"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 item">
+                        <div class="box" style="background-image:url(assets/team/3.jpg)">
+                            <div class="cover">
+                                <h3 class="name">Gannouchi Chedly</h3>
+                                <p class="title">Secrétaire Géneral</p>
+                                <div class="social"><a href="https://www.facebook.com/chedly.ganouchi" target="_blank"><i class="fa fa-facebook-official"></i></a><a href="#"></i></a><a href="https://www.instagram.com/chedlyganouchi/?hl=fr"target="_blank"><i class="fa fa-instagram"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="margin-left:2.5em">
+                    <div class="col-md-4 col-lg-3 item">
+                      <div class="box" style="background-image:url(assets/team/4.jpg)">
+                          <div class="cover">
+                              <h3 class="name">Bouhejba Soufia</h3>
+                              <p class="title">Présidente de la comission interne</p>
+                              <div class="social"><a href="https://www.facebook.com/profile.php?id=100006965599310" target="_blank"><i class="fa fa-facebook-official"></i></a><a href="#"></i></a><a href="https://www.instagram.com/soufia.bouhejba/?hl=fr"target="_blank"><i class="fa fa-instagram"></i></a></div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-4 col-lg-3 item">
+                    <div class="box" style="background-image:url(assets/team/5.jpg)">
+                        <div class="cover">
+                            <h3 class="name">Selmi Dhia</h3>
+                            <p class="title">Président de la comission marketing et communication</p>
+                            <div class="social"><a href="https://www.facebook.com/profile.php?id=100004704795359" target="_blank"><i class="fa fa-facebook-official"></i></a><a href="#"></i></a><a href="https://www.instagram.com/dh_selmi/?hl=fr"target="_blank"><i class="fa fa-instagram"></i></a></div>
+                        </div>                            
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-3 item">
+                  <div class="box" style="background-image:url(assets/team/9.jpg)">
+                      <div class="cover">
+                          <h3 class="name">Njah Firas</h3>
+                          <p class="title">Chef Protocol</p>
+                          <div class="social"><a href="https://www.facebook.com/firas.njeh.33" target="_blank"><i class="fa fa-facebook-official"></i></a><a href="#"></i></a><a href="https://www.instagram.com/firas_njjeh/?hl=fr"target="_blank"><i class="fa fa-instagram"></i></a></div>
+                      </div>
+                  </div>
               </div>
+              <p style="margin-left:2.5em"></p>
+              <div class="col-md-4 col-lg-3 item">
+                <div class="box" style="background-image:url(assets/team/6.jpg)">
+                    <div class="cover">
+                        <h3 class="name">Hedri Oussema</h3>
+                        <p class="title">Président de la commission service</p>
+                        <div class="social"><a href=https://www.facebook.com/profile.php?id=100011204883495" target="_blank"><i class="fa fa-facebook-official"></i></a><a href="#"></i></a><a href="https://www.instagram.com/oussama_hidri_/?hl=fr"target="_blank"><i class="fa fa-instagram"></i></a></div>
+                    </div>
+                </div>
             </div>
-
-            <div class="card">
-              <div class="card-filter"></div>
-              <div class="card-title">
-                <h1>HCHICHA Nassim</h1>
-                <p>President du Club</p>
+            <div class="col-md-4 col-lg-3 item">
+              <div class="box" style="background-image:url(assets/team/7.jpg)">
+                  <div class="cover">
+                      <h3 class="name">Ammami Sarra</h3>
+                      <p class="title">Président de la commision effectif</p>
+                      <div class="social"><a href=https://www.facebook.com/sarsoura.amami"" target="_blank"><i class="fa fa-facebook-official"></i></a><a href="#"></i></a><a href="https://www.instagram.com/sarah_amami/?hl=fr"target="_blank"><i class="fa fa-instagram"></i></a></div>
+                  </div>
               </div>
-            </div>
-
-            <div class="card">
-              <div class="card-filter"></div>
-              <div class="card-title">
-                <h1>HCHICHA Nassim</h1>
-                <p>President du Club</p>
+          </div>
+        <div class="col-md-4 col-lg-3 item">
+          <div class="box" style="background-image:url(assets/team/8.jpg)">
+              <div class="cover">
+                  <h3 class="name">Melki Yessin</h3>
+                  <p class="title">Trésorier</p>
+                  <div class="social"><a href="https://www.facebook.com/Yessine.CR7" target="_blank"><i class="fa fa-facebook-official"></i></a><a href="#"></i></a><a href="https://www.instagram.com/yessin.melki/?hl=fr"target="_blank"><i class="fa fa-instagram"></i></a></div>
               </div>
+          </div>
+      </div>
+                </div>
             </div>
-
-            <div class="card">
-              <div class="card-filter"></div>
-              <div class="card-title">
-                <h1>HCHICHA Nassim</h1>
-                <p>President du Club</p>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card-filter"></div>
-              <div class="card-title">
-                <h1>HCHICHA Nassim</h1>
-                <p>President du Club</p>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card-filter"></div>
-              <div class="card-title">
-                <h1>HCHICHA Nassim</h1>
-                <p>President du Club</p>
-              </div>
-            </div>
-
+        </div>
 
           </div>
         </div>
 
       </section>
-
+     
       <section class="events">
 
         <img class="background" src="./assets/lion_background_right.png"
@@ -130,7 +165,7 @@
 
         <div class="text">
           <h1>Events</h1>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+          <p>Nous servons notre pays tout en laissant une traçe marquante de nos exploits <br> Vous trouverez çi-dessous nos actions au nom de notre club</p>
         </div>
 
         <div class="carousel-container">
@@ -139,52 +174,21 @@
             <div class="card">
               <div class="card-filter"></div>
               <div class="card-title">
-                <h1>HCHICHA Nassim</h1>
-                <p>President du Club</p>
+                <h1>Remise De Charte</h1>
+                <p>29 Mai 2021</p>
               </div>
             </div>
 
             <div class="card">
               <div class="card-filter"></div>
               <div class="card-title">
-                <h1>HCHICHA Nassim</h1>
-                <p>President du Club</p>
+                <h1>ليلة الرّحمة
+                </h1>
+                <p>8 Mai 2021</p>
               </div>
             </div>
 
-            <div class="card">
-              <div class="card-filter"></div>
-              <div class="card-title">
-                <h1>HCHICHA Nassim</h1>
-                <p>President du Club</p>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card-filter"></div>
-              <div class="card-title">
-                <h1>HCHICHA Nassim</h1>
-                <p>President du Club</p>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card-filter"></div>
-              <div class="card-title">
-                <h1>HCHICHA Nassim</h1>
-                <p>President du Club</p>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card-filter"></div>
-              <div class="card-title">
-                <h1>HCHICHA Nassim</h1>
-                <p>President du Club</p>
-              </div>
-            </div>
-
-          </div>
+           
         </div>
 
       </section>
@@ -196,7 +200,7 @@
 
         <div class="text">
           <h1>Contact</h1>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
+          <p>N'hésitez pas à nous contacter à l'aide de ce service de messagerie  <br> Vous êtes les bienvenus </p>
         </div>
 
         <form action="" method="POST">
@@ -230,7 +234,8 @@
       <div class="social">
         <div class="container">
           <i class="fas fa-phone"></i>
-          <p>00 000 000 - 00 000 000</p>
+          <p>53 399 222
+          </p>
         </div>
         <div class="container">
           <i class="fab fa-facebook"></i>
@@ -245,7 +250,6 @@
       <!-- TODO: make the social links -->
       <script src="../node_modules/slick-carousel/slick/slick.min.js"></script>
       <script src="./app/carousel.js"></script>
-      <script src="./app/scroll-nav.js"></script>
     </footer>
 
   </body>
