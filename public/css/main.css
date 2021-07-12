@@ -321,9 +321,7 @@ section.about .carousel-container .card {
   padding-bottom: 3rem;
   margin: 0 3rem;
   transition: transform 1s ease-in-out;
-}
-section.about .carousel-container .card-highlight-center {
-  transform: scale(1.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 }
 section.about .carousel-container .card-filter {
   position: absolute;
@@ -333,6 +331,7 @@ section.about .carousel-container .card-filter {
   height: 100%;
   mix-blend-mode: noraml;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 10%, #050980 110%);
+  opacity: 0;
 }
 section.about .carousel-container .card-title {
   width: 70%;
@@ -341,11 +340,33 @@ section.about .carousel-container .card-title {
 section.about .carousel-container .card-title h1 {
   color: #FFFFFF;
   margin-bottom: 0.7rem;
+  position: relative;
+  right: 3vw;
+  opacity: 0;
   font-weight: 300;
 }
 section.about .carousel-container .card-title p {
   color: #FFFFFF;
+  position: relative;
+  right: 5vw;
+  opacity: 0;
+}
+section.about .carousel-container .card-highlight-center {
+  transform: scale(1.2);
+}
+section.about .carousel-container .card-highlight-center .card-filter {
+  transition: opacity 0.8s ease-in-out;
+  opacity: 1;
+}
+section.about .carousel-container .card-highlight-center .card-title h1 {
+  right: 0;
+  opacity: 1;
+  transition: opacity 0.3s ease-out 0.3s, right 0.5s ease-out 0.3s;
+}
+section.about .carousel-container .card-highlight-center .card-title p {
+  right: 0;
   opacity: 0.38;
+  transition: opacity 0.5s ease-out 0.7s, right 0.5s ease-out 0.7s;
 }
 section.about .carousel-container .dots {
   display: flex;
@@ -354,7 +375,6 @@ section.about .carousel-container .dots {
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 2rem;
 }
 section.about .carousel-container .dots li button {
   display: block;
@@ -374,7 +394,7 @@ section.about .carousel-container .dots .slick-active button {
 }
 section.about .carousel-container .slick-list {
   width: 80%;
-  padding: 2rem 0 !important;
+  padding: 4rem 0 !important;
 }
 section.about .carousel-container .slick-prev,
 section.about .carousel-container .slick-next {
@@ -459,9 +479,7 @@ section.events .carousel-container .card {
   padding-bottom: 3rem;
   margin: 0 3rem;
   transition: transform 1s ease-in-out;
-}
-section.events .carousel-container .card-highlight-center {
-  transform: scale(1.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 }
 section.events .carousel-container .card-filter {
   position: absolute;
@@ -471,6 +489,7 @@ section.events .carousel-container .card-filter {
   height: 100%;
   mix-blend-mode: noraml;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 10%, #050980 110%);
+  opacity: 0;
 }
 section.events .carousel-container .card-title {
   width: 70%;
@@ -479,11 +498,33 @@ section.events .carousel-container .card-title {
 section.events .carousel-container .card-title h1 {
   color: #FFFFFF;
   margin-bottom: 0.7rem;
+  position: relative;
+  right: 3vw;
+  opacity: 0;
   font-weight: 300;
 }
 section.events .carousel-container .card-title p {
   color: #FFFFFF;
+  position: relative;
+  right: 5vw;
+  opacity: 0;
+}
+section.events .carousel-container .card-highlight-center {
+  transform: scale(1.2);
+}
+section.events .carousel-container .card-highlight-center .card-filter {
+  transition: opacity 0.8s ease-in-out;
+  opacity: 1;
+}
+section.events .carousel-container .card-highlight-center .card-title h1 {
+  right: 0;
+  opacity: 1;
+  transition: opacity 0.3s ease-out 0.3s, right 0.5s ease-out 0.3s;
+}
+section.events .carousel-container .card-highlight-center .card-title p {
+  right: 0;
   opacity: 0.38;
+  transition: opacity 0.5s ease-out 0.7s, right 0.5s ease-out 0.7s;
 }
 section.events .carousel-container .dots {
   display: flex;
@@ -492,7 +533,6 @@ section.events .carousel-container .dots {
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 2rem;
 }
 section.events .carousel-container .dots li button {
   display: block;
@@ -512,7 +552,7 @@ section.events .carousel-container .dots .slick-active button {
 }
 section.events .carousel-container .slick-list {
   width: 80%;
-  padding: 2rem 0 !important;
+  padding: 4rem 0 !important;
 }
 section.events .carousel-container .slick-prev,
 section.events .carousel-container .slick-next {
@@ -618,6 +658,13 @@ body {
   scrollbar-width: none;
 }
 body::-webkit-scrollbar {
+  display: none;
+}
+
+nav,
+header,
+.about,
+.contact {
   display: none;
 }
 

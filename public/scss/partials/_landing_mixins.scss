@@ -37,11 +37,10 @@
   }
 }
 
-
+// TODO: delete this after the redesign of the board cards
 @mixin section-carousel {
   width: 70vw;
   margin: 0 auto;
-
 
 
   .carousel {
@@ -51,7 +50,6 @@
   //TODO: add the selected card animation
   .card {
     $card-width: 13vw;
-    $center-card-width: $card-width + 5vw;
 
     @include flexy('x', center);
     @include img-background('../assets/card1.jpg', center);
@@ -66,26 +64,30 @@
     margin: 0 3rem;
     transition: transform 1s ease-in-out;
 
-    &-highlight-center {
-      transform: scale(1.2);
-    }
+    box-shadow:
+      0 4px 8px 0 rgba(0, 0, 0, 0.7),
+      0 6px 20px 0 rgba(0, 0, 0, 0.3);
 
-
-    // TODO: add shadows
 
     &-filter {
       @include apply-filter($blend:noraml) {
         @include apply-gradient(bottom, $card-filter)
       }
+
+      opacity: 0;
     }
 
     &-title {
       width: 70%;
       z-index: 3;
 
+
       h1 {
         color: $white;
         margin-bottom: .7rem;
+        position: relative;
+        right: 3vw;
+        opacity: 0;
 
         font: {
           weight: 300;
@@ -94,8 +96,38 @@
 
       p {
         color: $white;
-        opacity: .38;
+        position: relative;
+        right: 5vw;
+        opacity: 0;
       }
+    }
+
+    &-highlight-center {
+      transform: scale(1.2);
+
+      .card-filter {
+        transition: opacity .8s ease-in-out;
+        opacity: 1;
+      }
+
+      .card-title h1 {
+        right: 0;
+        opacity: 1;
+
+        transition:
+          opacity .3s ease-out .3s,
+          right .5s ease-out .3s;
+      }
+
+      .card-title p {
+        right: 0;
+        opacity: .38;
+
+        transition:
+          opacity .5s ease-out .7s,
+          right .5s ease-out .7s;
+      }
+
     }
   }
 
@@ -104,7 +136,6 @@
   .dots {
     @include flexy('x', center);
     width: 100%;
-    margin-top: 2rem;
 
     li button {
       @include square(.7rem);
@@ -126,7 +157,7 @@
 
   .slick-list {
     width: 80%;
-    padding: 2rem 0 !important;
+    padding: 4rem 0 !important;
   }
 
   .slick-prev,

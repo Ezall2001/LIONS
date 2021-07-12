@@ -15,7 +15,6 @@
 ---> working on
 ++ custom scroll-bar
 ++ change the carousel members to a non carousel cards
-++ add the active cards in the carousel
 
 ---> next moves
 +++ contact us email service
@@ -42,3 +41,4 @@
 + buy a domain and deploy out of gitpages
 + loading screen
 + glass landing nav bar
++ try out the scale 0 to 1 carousel cards animation
