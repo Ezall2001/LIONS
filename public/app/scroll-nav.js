@@ -20,6 +20,27 @@ const scroll_animation = section_query => {
   });
 }
 
+const update_active_dot = () => {
+  let i = 1;
+  const win_h = $(window).height()
+  const scroller_pos = $(window).scrollTop()
+
+  $('section')
+    .toArray()
+    .map(section => $(section).position())
+    .every(section => {
+      if (scroller_pos > section.top - win_h / 3) {
+        $('.scroll-dot').removeClass('active')
+        $(`.scroll-dot:nth-of-type(${i})`).addClass('active')
+        i++;
+        return true;
+      }
+
+      return false;
+    })
+
+}
+
 jQuery(() => {
   $('.scroll-dot').on("click", function () {
     const section_query = `.${$(this).attr('data-section')}`
@@ -40,5 +61,12 @@ jQuery(() => {
     scroll_animation('.contact')
   })
 
-  //TODO: add scroll events
+  $(window).on('scroll', () => {
+    update_active_dot()
+
+  })
 })
+
+
+
+// TODO: add the user position in the scroll bar
