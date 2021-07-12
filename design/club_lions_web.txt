@@ -1,22 +1,44 @@
-auth 
-email service
-mobile friendly ?
-event history -> event details -> blog
-admin 
-upcoming event
-members
-contactus
+---> grand plans:
++ newsletter
++ preview on upcoming events and online event's ticket order
++ presentation of club
++ recrutement forms
++ guidlines
++ point of contact
++ sponsor/parteners ads
++ sponsors database and statistics
++ members evaluation
++ blog
++ online-events
++ club history
+
+---> working on
+++ custom scroll-bar
+++ change the carousel members to a non carousel cards
+++ add the active cards in the carousel
+
+---> next moves
++++ contact us email service
++++ responsive
++++ make a trello workflow
+
+++ newsletter email service
+++ side nav for mobile 
+++ web views
+++ add the five axes in the landing hero or about section
+++ refactor the design
+++ research on whether we can access git pages from google
 
 
-about page
-hero
-
-landing page: 
-  - sticky nav
-  - sticky bring to top button
-  - scroll animation
-
-nav -> about register/login contact event 
-
-
-css scroll on landing page
++ login system
++ roles system
++ section details
++ change landing hero to a video
++ work on animations
++ add the can't slide no more when the carousel hit the edge
++ scroll animation
++ use less colors
++ dynamic enjection using json
++ buy a domain and deploy out of gitpages
++ loading screen
++ glass landing nav bar
