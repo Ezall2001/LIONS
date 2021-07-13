@@ -18,6 +18,7 @@
   text-decoration: underline;
   position: relative;
   cursor: pointer;
+  transition: color .2s ease-in;
 
 
   &::before {
@@ -27,15 +28,17 @@
     position: absolute;
     top: 0;
     left: 70%;
-    background-color: rgba(80, 80, 87, 0.637);
+    z-index: 6;
+    background-color: rgb(77, 77, 85);
     border-radius: .2rem;
     color: $white;
     font-size: .9rem;
-    opacity: 0;
+    display: none;
 
   }
 
   &:hover::before {
+    display: block;
     animation: tooltip-pop .3s forwards;
   }
 }

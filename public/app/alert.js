@@ -4,7 +4,7 @@ const alertPop = {
   },
 
   success: function (msg) {
-    this.displayAlert('succsess', msg)
+    this.displayAlert('success', msg)
   },
 
 

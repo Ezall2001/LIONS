@@ -39,6 +39,15 @@ section.contact {
       &::placeholder {
         color: $input-placeholder;
       }
+
+      &.missing {
+        border: 2px solid #f5919b;
+
+        &::placeholder {
+          color: #842029;
+        }
+
+      }
     }
 
     .first-row {

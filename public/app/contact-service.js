@@ -23,12 +23,18 @@ jQuery(() => {
       let err = null
 
       if (missing.length > 0) {
-        err = 'missing information '
-        missing.forEach(input => err += input + ' - ')
+        err = 'these fields are missing: <i>'
+        missing.forEach(input => {
+          err += input + ' - '
+          $(`input[name=${input}],textarea[name=${input}]`)
+            .addClass('missing')
+        })
         err = err.slice(0, err.length - 3)
+        err += '</i>'
         alertPop.err(err)
       }
 
+      // TODO: add the ok status and refactor this
 
 
 
@@ -38,7 +44,7 @@ jQuery(() => {
 
         $.ajax({
           method: 'POST',
-          url: 'https://formsubmit.o/ajax/armen.bakir@esprit.tn',
+          url: 'https://formsubmit.co/ajax/armen.bakir@esprit.tn',
           dataType: 'json',
           accepts: 'application/json',
           data: {
