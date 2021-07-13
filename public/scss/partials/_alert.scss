@@ -1,0 +1,54 @@
+@use "./config"as *;
+
+.alert {
+  position: fixed;
+  top: 0;
+  left: 1vw;
+  z-index: 5;
+  width: 98vw;
+  padding: 1.5rem 0;
+  // display: none ;
+
+  border-bottom: {
+    left-radius: .5rem;
+    right-radius: .5rem;
+  }
+
+  background-color: #f8d7da;
+  color: #842029;
+  border: 3px solid #f5c2c7;
+
+  &.error {
+    background-color: #f8d7da;
+    color: #842029;
+    border: 3px solid #f5c2c7;
+
+
+  }
+
+  p {
+    width: 70%;
+    margin: auto;
+    font-size: 1.3rem;
+
+    b {
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      margin-right: 1rem;
+
+      &::after {
+        content: ':';
+        margin-left: .1rem;
+      }
+    }
+  }
+
+  .close {
+    position: absolute;
+    top: .7rem;
+    right: 1.5rem;
+    z-index: 6;
+    cursor: pointer;
+  }
+
+}

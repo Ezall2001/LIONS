@@ -20,6 +20,79 @@ li {
   list-style: none;
 }
 
+@keyframes tooltip-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    left: 105%;
+    transform: scale(1);
+  }
+}
+.copy-tooltip {
+  text-decoration: underline;
+  position: relative;
+  cursor: pointer;
+}
+.copy-tooltip::before {
+  content: attr(data-copy);
+  white-space: nowrap;
+  padding: 0.5rem 1.2rem;
+  position: absolute;
+  top: 0;
+  left: 70%;
+  background-color: rgba(80, 80, 87, 0.637);
+  border-radius: 0.2rem;
+  color: #FFFFFF;
+  font-size: 0.9rem;
+  opacity: 0;
+}
+.copy-tooltip:hover::before {
+  animation: tooltip-pop 0.3s forwards;
+}
+
+.alert {
+  position: fixed;
+  top: 0;
+  left: 1vw;
+  z-index: 5;
+  width: 98vw;
+  padding: 1.5rem 0;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  background-color: #f8d7da;
+  color: #842029;
+  border: 3px solid #f5c2c7;
+}
+.alert.error {
+  background-color: #f8d7da;
+  color: #842029;
+  border: 3px solid #f5c2c7;
+}
+.alert p {
+  width: 70%;
+  margin: auto;
+  font-size: 1.3rem;
+}
+.alert p b {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin-right: 1rem;
+}
+.alert p b::after {
+  content: ":";
+  margin-left: 0.1rem;
+}
+.alert .close {
+  position: absolute;
+  top: 0.7rem;
+  right: 1.5rem;
+  z-index: 6;
+  cursor: pointer;
+}
+
 @keyframes under_line {
   0% {
     right: 80%;
@@ -658,13 +731,6 @@ body {
   scrollbar-width: none;
 }
 body::-webkit-scrollbar {
-  display: none;
-}
-
-nav,
-header,
-.about,
-.contact {
   display: none;
 }
 

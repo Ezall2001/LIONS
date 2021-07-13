@@ -1,3 +1,5 @@
+@use "./partials/global_tools";
+@use "./partials/alert";
 @use "./partials/nav";
 @use "./partials/scroll-nav";
 @use "./partials/header";
@@ -16,9 +18,9 @@ body {
   }
 }
 
-nav,
-header,
-.about,
-.contact {
-  display: none; //TODO: delete this
-}
+// nav,
+// header,
+// .about,
+// .contact {
+//   display: none; //TODO: delete this
+// }

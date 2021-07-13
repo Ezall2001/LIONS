@@ -15,9 +15,9 @@
 ---> working on
 ++ custom scroll-bar
 ++ change the carousel members to a non carousel cards
++++ contact us email service
 
 ---> next moves
-+++ contact us email service
 +++ responsive
 +++ make a trello workflow
 
