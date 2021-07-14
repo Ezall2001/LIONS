@@ -702,12 +702,12 @@ section.contact form input::placeholder,
 section.contact form textarea::placeholder {
   color: #A5A5A5;
 }
-section.contact form input.missing,
-section.contact form textarea.missing {
+section.contact form input.error,
+section.contact form textarea.error {
   border: 2px solid #f5919b;
 }
-section.contact form input.missing::placeholder,
-section.contact form textarea.missing::placeholder {
+section.contact form input.error::placeholder,
+section.contact form textarea.error::placeholder {
   color: #842029;
 }
 section.contact form .first-row {

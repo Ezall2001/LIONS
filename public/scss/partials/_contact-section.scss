@@ -40,7 +40,7 @@ section.contact {
         color: $input-placeholder;
       }
 
-      &.missing {
+      &.error {
         border: 2px solid #f5919b;
 
         &::placeholder {
@@ -48,6 +48,7 @@ section.contact {
         }
 
       }
+
     }
 
     .first-row {
