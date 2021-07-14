@@ -1,41 +1,31 @@
 @use "./config"as *;
 @use "sass:list";
 
+$logo-width: 8vw;
+$nav-padding:(1rem 5rem);
 
-@keyframes under_line {
-  0% {
-    right: 80%;
-    width: 40%;
-    opacity: .5;
-  }
-
-  100% {
-    right: 0%;
-    width: 100%;
-    opacity: 1;
-  }
-}
 
 nav {
   @include apply-gradient(bottom, $blue-filter);
   @include flexy('x', space-between);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 3;
   width: 100vw;
-  padding: 1rem 5rem;
-  //TODO: add paralex
-  //TODO: make the mobile version
+  padding: $nav-padding;
+
 
   .logo {
-    @include square(8vw);
+    @include square($logo-width);
     @include img-background('../assets/logo.png');
   }
 
   ul {
-    @include flexy('x', flex-end);
+    $ul-width:calc(100vw - #{$logo-width} - #{list.nth($nav-padding, 2)*2});
 
+    @include flexy('x', flex-end);
+    width: $ul-width;
 
     li {
       margin-left: 5rem;
@@ -44,29 +34,13 @@ nav {
         size: 1.5rem;
         weight: 300;
       }
+
+      //TODO: add hover animation
     }
 
     a {
       color: $white;
       padding: .5rem;
-      text-align: center;
-      position: relative;
-
-      &::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        background-color: $action-color;
-        bottom: 0%;
-        right: 0%;
-        opacity: 0;
-
-      }
-
-      &:hover::before {
-        animation: under_line .25s ease-in-out forwards;
-      }
     }
   }
 }
