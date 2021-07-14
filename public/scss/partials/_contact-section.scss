@@ -26,8 +26,9 @@ section.contact {
 
   form {
     @include flexy('y', center);
-    width: 30%;
+    width: 40%;
     margin: auto;
+    padding: 2rem 0;
 
     input,
     textarea {
@@ -35,6 +36,11 @@ section.contact {
       background-color: $input-background;
       border: 1px solid $grey;
       font-size: 1rem;
+
+      &:focus {
+        border: 2px solid rgb(69, 117, 161);
+        outline: none;
+      }
 
       &::placeholder {
         color: $input-placeholder;
@@ -47,6 +53,10 @@ section.contact {
           color: #842029;
         }
 
+      }
+
+      &.ok {
+        border: 2px solid #7be2b4;
       }
 
     }

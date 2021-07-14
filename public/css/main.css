@@ -688,8 +688,9 @@ section.contact form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 30%;
+  width: 40%;
   margin: auto;
+  padding: 2rem 0;
 }
 section.contact form input,
 section.contact form textarea {
@@ -697,6 +698,11 @@ section.contact form textarea {
   background-color: #F3F3F3;
   border: 1px solid #707070;
   font-size: 1rem;
+}
+section.contact form input:focus,
+section.contact form textarea:focus {
+  border: 2px solid #4575a1;
+  outline: none;
 }
 section.contact form input::placeholder,
 section.contact form textarea::placeholder {
@@ -709,6 +715,10 @@ section.contact form textarea.error {
 section.contact form input.error::placeholder,
 section.contact form textarea.error::placeholder {
   color: #842029;
+}
+section.contact form input.ok,
+section.contact form textarea.ok {
+  border: 2px solid #7be2b4;
 }
 section.contact form .first-row {
   display: flex;
