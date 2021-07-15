@@ -610,7 +610,6 @@ section.events .carousel-container .carousel {
   justify-content: center;
   align-items: center;
 }
-
 section.events .carousel-container .card {
   display: flex;
   flex-wrap: wrap;
@@ -852,6 +851,7 @@ section.contact form button {
   cursor: pointer;
 }
 
+<<<<<<< Updated upstream
 body {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -862,3 +862,6 @@ body::-webkit-scrollbar {
 }
 
 /*# sourceMappingURL=main.css.map */
+=======
+/*# sourceMappingURL=main.css.map */
+>>>>>>> Stashed changes
