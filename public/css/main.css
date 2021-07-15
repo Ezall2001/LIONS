@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -25,18 +26,21 @@ li {
     opacity: 0;
     transform: scale(0.5);
   }
+
   100% {
     opacity: 1;
     left: 105%;
     transform: scale(1);
   }
 }
+
 .copy-tooltip {
   text-decoration: underline;
   position: relative;
   cursor: pointer;
   transition: color 0.2s ease-in;
 }
+
 .copy-tooltip::before {
   content: attr(data-copy);
   white-space: nowrap;
@@ -51,6 +55,7 @@ li {
   font-size: 0.9rem;
   display: none;
 }
+
 .copy-tooltip:hover::before {
   display: block;
   animation: tooltip-pop 0.3s forwards;
@@ -67,30 +72,36 @@ li {
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
 }
+
 .alert.error {
   background-color: #f8d7da;
   color: #842029;
   border: 3px solid #f5c2c7;
 }
+
 .alert.success {
   background-color: #d1e7dd;
   color: #0f5132;
   border: 3px solid #badbcc;
 }
+
 .alert p {
   width: 70%;
   margin: auto;
   font-size: 1.15rem;
 }
+
 .alert p b {
   font-size: 1.3rem;
   text-transform: uppercase;
   margin-right: 1rem;
 }
+
 .alert p b::after {
   content: ":";
   margin-left: 0.1rem;
 }
+
 .alert .close {
   position: absolute;
   top: 0.7rem;
@@ -105,12 +116,14 @@ li {
     width: 40%;
     opacity: 0.5;
   }
+
   100% {
     right: 0%;
     width: 100%;
     opacity: 1;
   }
 }
+
 nav {
   background: linear-gradient(to bottom, #001e8c -10%, rgba(66, 84, 150, 0.53) 60%, rgba(255, 255, 255, 0) 100%);
   display: flex;
@@ -125,6 +138,7 @@ nav {
   width: 100vw;
   padding: 1rem 5rem;
 }
+
 nav .logo {
   display: block;
   width: 8vw;
@@ -134,6 +148,7 @@ nav .logo {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 nav ul {
   display: flex;
   flex-wrap: wrap;
@@ -141,17 +156,20 @@ nav ul {
   justify-content: flex-end;
   align-items: center;
 }
+
 nav ul li {
   margin-left: 5rem;
   font-size: 1.5rem;
   font-weight: 300;
 }
+
 nav ul a {
   color: #FFFFFF;
   padding: 0.5rem;
   text-align: center;
   position: relative;
 }
+
 nav ul a::before {
   content: "";
   position: absolute;
@@ -162,6 +180,7 @@ nav ul a::before {
   right: 0%;
   opacity: 0;
 }
+
 nav ul a:hover::before {
   animation: under_line 0.25s ease-in-out forwards;
 }
@@ -191,6 +210,7 @@ html {
   margin-left: 0;
   margin-right: 2.5rem;
 }
+
 .scroll-nav .scroll-dot {
   display: block;
   width: 0.8rem;
@@ -201,12 +221,15 @@ html {
   cursor: pointer;
   position: relative;
 }
+
 .scroll-nav .scroll-dot:hover {
   background-color: royalblue;
 }
+
 .scroll-nav .scroll-dot:hover::before {
   color: royalblue;
 }
+
 .scroll-nav .scroll-dot::before {
   content: attr(data-tooltip);
   position: absolute;
@@ -215,9 +238,11 @@ html {
   transform: translateY(-50%);
   color: rgba(128, 128, 128, 0.397);
 }
+
 .scroll-nav .scroll-dot.active {
   background-color: royalblue;
 }
+
 .scroll-nav .scroll-dot.active::before {
   color: royalblue;
 }
@@ -232,6 +257,7 @@ header {
   justify-content: center;
   align-items: center;
 }
+
 header .caroussel {
   background-image: url("../assets/landing0.png");
   background-position: center;
@@ -245,6 +271,7 @@ header .caroussel {
   left: 0;
   z-index: -1;
 }
+
 header .caroussel .background-filter {
   position: absolute;
   top: 0;
@@ -255,18 +282,22 @@ header .caroussel .background-filter {
   background-color: #1900FF;
   opacity: 0.42;
 }
+
 header .welcome {
   text-align: center;
   color: #FFFFFF;
   padding-top: 20vh;
 }
+
 header .welcome-text {
   margin-bottom: 4rem;
 }
+
 header .welcome-text h1 {
   font-size: 2.5rem;
   font-weight: 300;
 }
+
 header .welcome button {
   border: none;
   background-color: #F4D108;
@@ -288,6 +319,7 @@ footer {
   background-color: #223E7C;
   color: #FFFFFF;
 }
+
 footer .logo {
   display: flex;
   flex-wrap: wrap;
@@ -297,25 +329,30 @@ footer .logo {
   width: 33.33%;
   padding: 2rem 0;
 }
+
 footer .logo img {
   width: 15vh;
   margin-right: 2rem;
 }
+
 footer .logo h1 {
   text-align: center;
   font-size: 2rem;
   font-weight: 400;
 }
+
 footer .logo h1 span {
   font-size: 3rem;
   font-weight: 400;
 }
+
 footer .rights {
   width: 33.33%;
   align-self: flex-end;
   text-align: center;
   font-weight: 300;
 }
+
 footer .social {
   width: 33.33%;
   display: flex;
@@ -324,6 +361,7 @@ footer .social {
   justify-content: center;
   align-items: flex-end;
 }
+
 footer .social .container {
   display: flex;
   flex-wrap: wrap;
@@ -332,9 +370,11 @@ footer .social .container {
   align-items: center;
   font-weight: 300;
 }
+
 footer .social .container:not(footer .social .container:nth-of-type(3)) {
   margin-bottom: 1rem;
 }
+
 footer .social .container i {
   font-size: 0.9rem;
   margin-right: 0.7rem;
@@ -346,35 +386,42 @@ section.about {
   background-color: #FFFFFF;
   overflow: hidden;
 }
-section.about > * {
+
+section.about>* {
   position: relative;
   z-index: 2;
 }
+
 section.about .background {
   position: absolute;
   top: 2vh;
   max-height: 100vh;
   left: -10vw;
 }
+
 section.about .text {
   width: 50vw;
   margin: 0 auto 3rem auto;
   text-align: center;
 }
+
 section.about .text h1 {
   color: #2A448D;
   margin-bottom: 0.7rem;
   font-size: 2rem;
   font-weight: 400;
 }
+
 section.about .text p {
   color: #707070;
   font-size: 1.2rem;
 }
+
 section.about .carousel-container {
   width: 70vw;
   margin: 0 auto;
 }
+
 section.about .carousel-container .carousel {
   display: flex;
   flex-wrap: wrap;
@@ -382,6 +429,7 @@ section.about .carousel-container .carousel {
   justify-content: center;
   align-items: center;
 }
+
 section.about .carousel-container .card {
   display: flex;
   flex-wrap: wrap;
@@ -402,6 +450,7 @@ section.about .carousel-container .card {
   transition: transform 1s ease-in-out;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 }
+
 section.about .carousel-container .card-filter {
   position: absolute;
   top: 0;
@@ -412,10 +461,12 @@ section.about .carousel-container .card-filter {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 10%, #050980 110%);
   opacity: 0;
 }
+
 section.about .carousel-container .card-title {
   width: 70%;
   z-index: 3;
 }
+
 section.about .carousel-container .card-title h1 {
   color: #FFFFFF;
   margin-bottom: 0.7rem;
@@ -424,29 +475,35 @@ section.about .carousel-container .card-title h1 {
   opacity: 0;
   font-weight: 300;
 }
+
 section.about .carousel-container .card-title p {
   color: #FFFFFF;
   position: relative;
   right: 5vw;
   opacity: 0;
 }
+
 section.about .carousel-container .card-highlight-center {
   transform: scale(1.2);
 }
+
 section.about .carousel-container .card-highlight-center .card-filter {
   transition: opacity 0.8s ease-in-out;
   opacity: 1;
 }
+
 section.about .carousel-container .card-highlight-center .card-title h1 {
   right: 0;
   opacity: 1;
   transition: opacity 0.3s ease-out 0.3s, right 0.5s ease-out 0.3s;
 }
+
 section.about .carousel-container .card-highlight-center .card-title p {
   right: 0;
   opacity: 0.38;
   transition: opacity 0.5s ease-out 0.7s, right 0.5s ease-out 0.7s;
 }
+
 section.about .carousel-container .dots {
   display: flex;
   flex-wrap: wrap;
@@ -455,6 +512,7 @@ section.about .carousel-container .dots {
   align-items: center;
   width: 100%;
 }
+
 section.about .carousel-container .dots li button {
   display: block;
   width: 0.7rem;
@@ -465,16 +523,20 @@ section.about .carousel-container .dots li button {
   margin: 0 0.3rem;
   border-radius: 50%;
 }
+
 section.about .carousel-container .dots li button:hover {
   border: 3px solid #2A448D;
 }
+
 section.about .carousel-container .dots .slick-active button {
   background-color: #2A448D;
 }
+
 section.about .carousel-container .slick-list {
   width: 80%;
   padding: 4rem 0 !important;
 }
+
 section.about .carousel-container .slick-prev,
 section.about .carousel-container .slick-next {
   display: block;
@@ -491,6 +553,7 @@ section.about .carousel-container .slick-next {
   font-size: 3rem;
   color: #04007E;
 }
+
 section.about .carousel-container h2 {
   color: #2a448da6;
   margin-bottom: 2rem;
@@ -504,35 +567,42 @@ section.events {
   background-color: #E8E8E8;
   overflow: hidden;
 }
-section.events > * {
+
+section.events>* {
   position: relative;
   z-index: 2;
 }
+
 section.events .background {
   position: absolute;
   top: 2vh;
   max-height: 100vh;
   right: -10vw;
 }
+
 section.events .text {
   width: 50vw;
   margin: 0 auto 3rem auto;
   text-align: center;
 }
+
 section.events .text h1 {
   color: #2A448D;
   margin-bottom: 0.7rem;
   font-size: 2rem;
   font-weight: 400;
 }
+
 section.events .text p {
   color: #707070;
   font-size: 1.2rem;
 }
+
 section.events .carousel-container {
   width: 70vw;
   margin: 0 auto;
 }
+
 section.events .carousel-container .carousel {
   display: flex;
   flex-wrap: wrap;
@@ -540,6 +610,7 @@ section.events .carousel-container .carousel {
   justify-content: center;
   align-items: center;
 }
+
 section.events .carousel-container .card {
   display: flex;
   flex-wrap: wrap;
@@ -560,6 +631,7 @@ section.events .carousel-container .card {
   transition: transform 1s ease-in-out;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 }
+
 section.events .carousel-container .card-filter {
   position: absolute;
   top: 0;
@@ -570,10 +642,12 @@ section.events .carousel-container .card-filter {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 10%, #050980 110%);
   opacity: 0;
 }
+
 section.events .carousel-container .card-title {
   width: 70%;
   z-index: 3;
 }
+
 section.events .carousel-container .card-title h1 {
   color: #FFFFFF;
   margin-bottom: 0.7rem;
@@ -582,29 +656,35 @@ section.events .carousel-container .card-title h1 {
   opacity: 0;
   font-weight: 300;
 }
+
 section.events .carousel-container .card-title p {
   color: #FFFFFF;
   position: relative;
   right: 5vw;
   opacity: 0;
 }
+
 section.events .carousel-container .card-highlight-center {
   transform: scale(1.2);
 }
+
 section.events .carousel-container .card-highlight-center .card-filter {
   transition: opacity 0.8s ease-in-out;
   opacity: 1;
 }
+
 section.events .carousel-container .card-highlight-center .card-title h1 {
   right: 0;
   opacity: 1;
   transition: opacity 0.3s ease-out 0.3s, right 0.5s ease-out 0.3s;
 }
+
 section.events .carousel-container .card-highlight-center .card-title p {
   right: 0;
   opacity: 0.38;
   transition: opacity 0.5s ease-out 0.7s, right 0.5s ease-out 0.7s;
 }
+
 section.events .carousel-container .dots {
   display: flex;
   flex-wrap: wrap;
@@ -613,6 +693,7 @@ section.events .carousel-container .dots {
   align-items: center;
   width: 100%;
 }
+
 section.events .carousel-container .dots li button {
   display: block;
   width: 0.7rem;
@@ -623,16 +704,20 @@ section.events .carousel-container .dots li button {
   margin: 0 0.3rem;
   border-radius: 50%;
 }
+
 section.events .carousel-container .dots li button:hover {
   border: 3px solid #2A448D;
 }
+
 section.events .carousel-container .dots .slick-active button {
   background-color: #2A448D;
 }
+
 section.events .carousel-container .slick-list {
   width: 80%;
   padding: 4rem 0 !important;
 }
+
 section.events .carousel-container .slick-prev,
 section.events .carousel-container .slick-next {
   display: block;
@@ -657,31 +742,37 @@ section.contact {
   background-color: #FFFFFF;
   overflow-y: hidden;
 }
-section.contact > * {
+
+section.contact>* {
   position: relative;
   z-index: 2;
 }
+
 section.contact .background {
   position: absolute;
   top: 2vh;
   max-height: 100vh;
   left: -10vw;
 }
+
 section.contact .text {
   width: 50vw;
   margin: 0 auto 3rem auto;
   text-align: center;
 }
+
 section.contact .text h1 {
   color: #2A448D;
   margin-bottom: 0.7rem;
   font-size: 2rem;
   font-weight: 400;
 }
+
 section.contact .text p {
   color: #707070;
   font-size: 1.2rem;
 }
+
 section.contact form {
   display: flex;
   flex-wrap: wrap;
@@ -692,6 +783,7 @@ section.contact form {
   margin: auto;
   padding: 2rem 0;
 }
+
 section.contact form input,
 section.contact form textarea {
   padding: 0.6rem 1rem;
@@ -699,27 +791,33 @@ section.contact form textarea {
   border: 1px solid #707070;
   font-size: 1rem;
 }
+
 section.contact form input:focus,
 section.contact form textarea:focus {
   border: 2px solid #4575a1;
   outline: none;
 }
+
 section.contact form input::placeholder,
 section.contact form textarea::placeholder {
   color: #A5A5A5;
 }
+
 section.contact form input.error,
 section.contact form textarea.error {
   border: 2px solid #f5919b;
 }
+
 section.contact form input.error::placeholder,
 section.contact form textarea.error::placeholder {
   color: #842029;
 }
+
 section.contact form input.ok,
 section.contact form textarea.ok {
   border: 2px solid #7be2b4;
 }
+
 section.contact form .first-row {
   display: flex;
   flex-wrap: wrap;
@@ -729,18 +827,22 @@ section.contact form .first-row {
   width: 100%;
   margin-bottom: 1rem;
 }
+
 section.contact form .first-row input[type=email] {
   width: 60%;
 }
+
 section.contact form .first-row input[type=tel] {
   width: 37%;
 }
+
 section.contact form textarea {
   font-family: "Helvetica Neue LT Com", "Roboto", sans-serif;
   width: 100%;
   margin-bottom: 1.3rem;
   resize: none;
 }
+
 section.contact form button {
   align-self: flex-end;
   padding: 0.6rem 2.4rem;
@@ -754,6 +856,7 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
 body::-webkit-scrollbar {
   display: none;
 }
