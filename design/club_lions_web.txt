@@ -14,8 +14,6 @@
 
 ---> working on
 ++ custom scroll-bar
-++ change the carousel members to a non carousel cards
-+++ contact us email service
 
 ---> next moves
 +++ responsive
@@ -37,7 +35,6 @@
 + add the can't slide no more when the carousel hit the edge
 + scroll animation
 + use less colors
-+ dynamic enjection using json
 + buy a domain and deploy out of gitpages
 + loading screen
 + glass landing nav bar

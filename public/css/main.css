@@ -340,6 +340,18 @@ footer .social .container i {
   margin-right: 0.7rem;
 }
 
+@keyframes board-card-animation {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+    top: 1.5rem;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    top: 0;
+  }
+}
 section.about {
   padding: 4rem 0;
   position: relative;
@@ -389,7 +401,7 @@ section.about .board .cards-container {
   align-items: center;
 }
 section.about .board .card {
-  background-image: url("../assets/team/1.jpg");
+  background-image: url("");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -425,12 +437,15 @@ section.about .board .card-title {
   text-align: center;
 }
 section.about .board .card-title h1 {
+  position: relative;
+  opacity: 0;
   font-size: 1.5rem;
   font-weight: 400;
 }
 section.about .board .card-title p {
+  position: relative;
   font-size: 1rem;
-  opacity: 0.9;
+  opacity: 0;
 }
 section.about .board .card-title .social {
   display: flex;
@@ -441,6 +456,8 @@ section.about .board .card-title .social {
   width: 100%;
   margin: 1rem auto 0 auto;
   font-size: 1.2rem;
+  opacity: 0;
+  position: relative;
 }
 section.about .board .card-title .social a:nth-of-type(1) {
   margin-right: 2rem;
@@ -450,7 +467,17 @@ section.about .board .card-title .social a {
   color: #FFFFFF;
 }
 section.about .board .card:hover .hover-wrapper {
+  transition: opacity 0.25s ease-out;
   opacity: 1;
+}
+section.about .board .card:hover h1 {
+  animation: board-card-animation 0.4s ease-out forwards;
+}
+section.about .board .card:hover p {
+  animation: board-card-animation 0.4s ease-out 0.3s forwards;
+}
+section.about .board .card:hover .social {
+  animation: board-card-animation 0.3s ease-out 0.45s forwards;
 }
 
 section.events {
@@ -501,10 +528,6 @@ section.events .carousel-container .card {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-image: url("../assets/card1.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   align-items: flex-end;
   height: calc(1.4324324324 * 13vw);
   border-radius: 16px;
@@ -514,6 +537,17 @@ section.events .carousel-container .card {
   margin: 0 3rem;
   transition: transform 1s ease-in-out;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+}
+section.events .carousel-container .card-background {
+  background-image: url("");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 section.events .carousel-container .card-filter {
   position: absolute;
@@ -575,14 +609,17 @@ section.events .carousel-container .dots li button {
   cursor: pointer;
   border: none;
   background-color: #8C8C8C;
+  color: #8C8C8C;
   margin: 0 0.3rem;
   border-radius: 50%;
+  overflow: hidden;
 }
 section.events .carousel-container .dots li button:hover {
   border: 3px solid #2A448D;
 }
 section.events .carousel-container .dots .slick-active button {
   background-color: #2A448D;
+  color: #2A448D;
 }
 section.events .carousel-container .slick-list {
   width: 80%;
