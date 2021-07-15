@@ -102,7 +102,7 @@ li {
   background:linear-gradient(#{$syntax});
 }
 
-@mixin apply-filter($color:null, $blend:noraml) {
+@mixin apply-filter($color:null, $blend:normal) {
   position: absolute;
   top: 0;
   left: 0;

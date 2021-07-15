@@ -20,16 +20,87 @@ section.about {
     @include section-text;
   }
 
-  .carousel-container {
-    @include section-carousel;
+  .board {
 
-    h2 {
+    width: 50%;
+    margin: 0 auto;
+
+    .title {
       color: $light-blue;
       margin-bottom: 2rem;
 
       font: {
         size: 1.5rem;
         weight: 400;
+      }
+
+    }
+
+    .cards-container {
+      @include flexy('x', space-between);
+
+    }
+
+    .card {
+      @include img-background('../assets/team/1.jpg');
+      @include flexy('y', center);
+      aspect-ratio: 9/11;
+      width: 31.5%;
+      margin-bottom: 2rem;
+      position: relative;
+      padding: 0 .5rem;
+
+      .hover-wrapper {
+        opacity: 0;
+      }
+
+      &-filter {
+        @include apply-filter($board-cards-filter);
+
+        z-index: 1;
+
+      }
+
+      &-title {
+        color: $white;
+        position: relative;
+        z-index: 3;
+        text-align: center;
+
+
+        h1 {
+          font: {
+            size: 1.5rem;
+            weight: 400;
+          }
+        }
+
+        p {
+          font-size: 1rem;
+          opacity: .9;
+        }
+
+        .social {
+          @include flexy('x', center);
+          width: 100%;
+          margin: 1rem auto 0 auto;
+          font-size: 1.2rem;
+
+          a:nth-of-type(1) {
+            margin-right: 2rem;
+          }
+
+          a {
+            opacity: .9;
+            color: $white;
+          }
+        }
+      }
+
+      &:hover {
+        .hover-wrapper {
+          opacity: 1;
+        }
       }
 
     }
