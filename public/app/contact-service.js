@@ -66,10 +66,11 @@ const errHandler = (errorName, errors = []) => {
 }
 
 const sendEmail = (input, fields) => {
+  const email = $('.contact form').attr('action')
 
   $.ajax({
     method: 'POST',
-    url: 'https://formsubmit.co/ajax/armen.bakir@esprit.tn',
+    url: `https://formsubmit.co/ajax/${email}`,
     dataType: 'json',
     accepts: 'application/json',
     data: {
@@ -85,8 +86,10 @@ const sendEmail = (input, fields) => {
     },
     error: (err) => {
       alertPop.err(`sorry for your inconvience, this service is down temporarily.
-          </br> please contact us on <u>lionsclubsirius@gmail.com</u>
+          </br> please contact us on <u data-copy="click to copy" class="copy-tooltip">lionsclubsirius@gmail.com</u>
           `)
+
+      resetToolTip()
     }
   })
 

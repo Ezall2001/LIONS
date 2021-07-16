@@ -71,6 +71,39 @@ const copyToClipboard = (text) => {
     `))
 }
 
+const animateToolTip = (toolTip, style) => {
+  $(toolTip)
+    .attr('data-copy', 'copied')
+    .css('color', style.fadeColor)
+    .animate({
+      fontSize: style.textSize / 1.1 + 'px',
+    }, 200, function () {
+      $(this)
+        .css('color', style.color)
+    })
+    .animate({
+      fontSize: style.textSize + 'px',
+    }, 100)
+}
+
+const resetToolTip = () => {
+  $('.copy-tooltip')
+    .off('click')
+    .off('mouseleave')
+
+  $('.copy-tooltip')
+    .attr('data-copy', 'click to copy')
+    .on('click', function () {
+      const style = animation_val($(this))
+      copyToClipboard($(this).html())
+      animateToolTip(this, style)
+    })
+    .on('mouseleave', function () {
+      $(this)
+        .attr('data-copy', 'click to copy')
+    })
+}
+
 jQuery(() => {
 
   $('body').append(
@@ -78,38 +111,6 @@ jQuery(() => {
     style = 'display:none'>`
   )
 
-  $('.copy-tooltip')
-    .attr('data-copy', 'click to copy')
-    .on('click', function () {
-
-
-      const {
-        textSize,
-        color,
-        fadeColor
-      } = animation_val($(this))
-
-      copyToClipboard($(this).html())
-
-
-      $(this)
-        .attr('data-copy', 'copied')
-        .css('color', fadeColor)
-        .animate({
-          fontSize: textSize / 1.1 + 'px',
-        }, 200, function () {
-          $(this)
-            .css('color', color)
-        })
-        .animate({
-          fontSize: textSize + 'px',
-        }, 100)
-
-
-    })
-    .on('mouseleave', function () {
-      $(this)
-        .attr('data-copy', 'click to copy')
-    })
+  resetToolTip()
 
 })

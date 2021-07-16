@@ -66,7 +66,3 @@ jQuery(() => {
 
   })
 })
-
-
-
-// TODO: add the user position in the scroll bar

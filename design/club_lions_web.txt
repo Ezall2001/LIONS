@@ -14,14 +14,15 @@
 
 ---> working on
 ++ custom scroll-bar
++++ responsive
 
 ---> next moves
-+++ responsive
-+++ make a trello workflow
++++ side nav for mobile 
++++ event landing section
 
-++ newsletter email service
-++ side nav for mobile 
+++ make a trello workflow
 ++ web views
+++ newsletter email service
 ++ add the five axes in the landing hero or about section
 ++ refactor the design
 ++ research on whether we can access git pages from google

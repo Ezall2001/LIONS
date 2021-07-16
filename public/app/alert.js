@@ -24,7 +24,7 @@ const alertPop = {
 
       this.hideAlert()
 
-    }, 8000)
+    }, 800000)
   },
 
   hideAlert: function () {

@@ -96,6 +96,5 @@ jQuery(() => {
     .then(injectEvents)
 
 
-  // TODO: finish the json
 
 })
