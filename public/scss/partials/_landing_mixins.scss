@@ -12,10 +12,21 @@
   @else if $align==right {
     right: -10vw;
   }
+
+  @include responsive(700) {
+    width: 80vw;
+    min-width: 464px;
+  }
+
+  @include responsive(430) {
+    width: 100vw;
+    min-width: 0;
+    opacity: .7;
+  }
 }
 
 @mixin section-text {
-  width: 50vw;
+  width: 50%;
   margin: 0 auto 3rem auto;
   text-align: center;
 
@@ -33,5 +44,17 @@
   p {
     color: $grey;
     font-size: 1.2rem;
+  }
+
+  @include responsive(1300) {
+    width: 70%;
+  }
+
+  @include responsive(1100) {
+    width: 80%;
+  }
+
+  @include responsive(800) {
+    width: 95%;
   }
 }

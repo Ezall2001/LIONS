@@ -1,0 +1,56 @@
+@use "./config"as *;
+
+footer {
+  @include responsive(1080) {
+
+    .social,
+    .logo {
+      width: 50%;
+    }
+
+    .rights {
+      order: 3;
+      width: 50%;
+    }
+  }
+
+  @include responsive(870) {
+    justify-content: center;
+    padding: 1rem 3rem;
+
+    .logo {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .social {
+      order: 3;
+    }
+
+  }
+
+  @include responsive(650) {
+    flex-direction: column;
+    padding: 1rem;
+
+    .social,
+    .rights,
+    .logo {
+      width: 100%;
+    }
+
+    .social {
+      order: 2;
+      align-content: center;
+      margin-bottom: 1rem;
+
+      .container {
+        flex-wrap: nowrap;
+      }
+    }
+
+    .rights {
+      align-self: center;
+    }
+  }
+}

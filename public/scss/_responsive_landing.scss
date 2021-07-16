@@ -1,0 +1,11 @@
+@use "./partials/responsive_about";
+@use "./partials/responsive_events";
+@use "./partials/responsive_contact";
+@use "./partials/responsive_footer";
+@use "./partials/config"as *;
+
+main .scroll-nav {
+  @include responsive(900) {
+    display: none;
+  }
+}

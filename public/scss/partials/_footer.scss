@@ -9,7 +9,6 @@ footer {
 
   .logo {
     @include flexy('x', flex-start);
-    width: 33.33%;
     padding: 2rem 0;
 
 
@@ -36,14 +35,12 @@ footer {
   }
 
   .rights {
-    width: 33.33%;
     align-self: flex-end;
     text-align: center;
     font-weight: 300;
   }
 
   .social {
-    width: 33.33%;
     @include flexy('y', flex-end);
 
     .container {

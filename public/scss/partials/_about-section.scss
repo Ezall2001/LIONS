@@ -36,7 +36,7 @@ section.about {
 
   .board {
 
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
 
     .title {
@@ -90,14 +90,14 @@ section.about {
           opacity: 0;
 
           font: {
-            size: 1.5rem;
+            size: 2rem;
             weight: 400;
           }
         }
 
         p {
           position: relative;
-          font-size: 1rem;
+          font-size: 1.2rem;
           opacity: 0;
         }
 
@@ -105,8 +105,9 @@ section.about {
           @include flexy('x', center);
           width: 100%;
           margin: 1rem auto 0 auto;
-          font-size: 1.2rem;
+          font-size: 1.5rem;
           opacity: 0;
+          transform: scale(0);
           position: relative;
 
           a:nth-of-type(1) {
@@ -135,7 +136,9 @@ section.about {
         }
 
         .social {
+          transform: scale(1);
           animation: board-card-animation .3s ease-out .45s forwards;
+          transition: transform 0s ease-in-out .45s;
         }
       }
 

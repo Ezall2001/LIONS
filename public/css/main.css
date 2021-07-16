@@ -294,7 +294,6 @@ footer .logo {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  width: 33.33%;
   padding: 2rem 0;
 }
 footer .logo img {
@@ -311,13 +310,11 @@ footer .logo h1 span {
   font-weight: 400;
 }
 footer .rights {
-  width: 33.33%;
   align-self: flex-end;
   text-align: center;
   font-weight: 300;
 }
 footer .social {
-  width: 33.33%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -369,8 +366,21 @@ section.about .background {
   max-height: 100vh;
   left: -10vw;
 }
+@media only screen and (max-width: 700px) {
+  section.about .background {
+    width: 80vw;
+    min-width: 464px;
+  }
+}
+@media only screen and (max-width: 430px) {
+  section.about .background {
+    width: 100vw;
+    min-width: 0;
+    opacity: 0.7;
+  }
+}
 section.about .text {
-  width: 50vw;
+  width: 50%;
   margin: 0 auto 3rem auto;
   text-align: center;
 }
@@ -384,8 +394,23 @@ section.about .text p {
   color: #707070;
   font-size: 1.2rem;
 }
+@media only screen and (max-width: 1300px) {
+  section.about .text {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  section.about .text {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  section.about .text {
+    width: 95%;
+  }
+}
 section.about .board {
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
 }
 section.about .board .title {
@@ -440,12 +465,12 @@ section.about .board .card-title {
 section.about .board .card-title h1 {
   position: relative;
   opacity: 0;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 400;
 }
 section.about .board .card-title p {
   position: relative;
-  font-size: 1rem;
+  font-size: 1.2rem;
   opacity: 0;
 }
 section.about .board .card-title .social {
@@ -456,8 +481,9 @@ section.about .board .card-title .social {
   align-items: center;
   width: 100%;
   margin: 1rem auto 0 auto;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   opacity: 0;
+  transform: scale(0);
   position: relative;
 }
 section.about .board .card-title .social a:nth-of-type(1) {
@@ -478,7 +504,9 @@ section.about .board .card:hover p {
   animation: board-card-animation 0.4s ease-out 0.3s forwards;
 }
 section.about .board .card:hover .social {
+  transform: scale(1);
   animation: board-card-animation 0.3s ease-out 0.45s forwards;
+  transition: transform 0s ease-in-out 0.45s;
 }
 
 section.events {
@@ -497,8 +525,21 @@ section.events .background {
   max-height: 100vh;
   right: -10vw;
 }
+@media only screen and (max-width: 700px) {
+  section.events .background {
+    width: 80vw;
+    min-width: 464px;
+  }
+}
+@media only screen and (max-width: 430px) {
+  section.events .background {
+    width: 100vw;
+    min-width: 0;
+    opacity: 0.7;
+  }
+}
 section.events .text {
-  width: 50vw;
+  width: 50%;
   margin: 0 auto 3rem auto;
   text-align: center;
 }
@@ -511,6 +552,21 @@ section.events .text h1 {
 section.events .text p {
   color: #707070;
   font-size: 1.2rem;
+}
+@media only screen and (max-width: 1300px) {
+  section.events .text {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  section.events .text {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  section.events .text {
+    width: 95%;
+  }
 }
 section.events .carousel-container {
   width: 70vw;
@@ -660,8 +716,21 @@ section.contact .background {
   max-height: 100vh;
   left: -10vw;
 }
+@media only screen and (max-width: 700px) {
+  section.contact .background {
+    width: 80vw;
+    min-width: 464px;
+  }
+}
+@media only screen and (max-width: 430px) {
+  section.contact .background {
+    width: 100vw;
+    min-width: 0;
+    opacity: 0.7;
+  }
+}
 section.contact .text {
-  width: 50vw;
+  width: 50%;
   margin: 0 auto 3rem auto;
   text-align: center;
 }
@@ -674,6 +743,21 @@ section.contact .text h1 {
 section.contact .text p {
   color: #707070;
   font-size: 1.2rem;
+}
+@media only screen and (max-width: 1300px) {
+  section.contact .text {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  section.contact .text {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  section.contact .text {
+    width: 95%;
+  }
 }
 section.contact form {
   display: flex;
@@ -741,6 +825,114 @@ section.contact form button {
   background-color: #F4D108;
   color: #FFFFFF;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 1300px) {
+  section.about .board {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  section.about .card .card-title h1 {
+    font-size: 1.7rem;
+  }
+  section.about .card .card-title p {
+    font-size: 1.1rem;
+  }
+  section.about .board {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  section.about .card .card-title h1 {
+    font-size: 1.5rem;
+  }
+  section.about .card .card-title p {
+    font-size: 1rem;
+  }
+  section.about .card .social {
+    font-size: 1.3rem !important;
+  }
+  section.about .board {
+    width: 95%;
+  }
+}
+@media only screen and (max-width: 580px) {
+  section.about .board .card {
+    width: 49%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  section.about .board {
+    width: 90%;
+  }
+  section.about .board .cards-container {
+    justify-content: center;
+  }
+  section.about .board .card {
+    width: 100%;
+  }
+  section.about .board .card .card-title h1 {
+    font-size: 2rem;
+  }
+  section.about .board .card .card-title p {
+    font-size: 1.5rem;
+  }
+  section.about .board .card .social {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media only screen and (max-width: 1080px) {
+  footer .social,
+footer .logo {
+    width: 50%;
+  }
+  footer .rights {
+    order: 3;
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 870px) {
+  footer {
+    justify-content: center;
+    padding: 1rem 3rem;
+  }
+  footer .logo {
+    width: 100%;
+    justify-content: center;
+  }
+  footer .social {
+    order: 3;
+  }
+}
+@media only screen and (max-width: 650px) {
+  footer {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  footer .social,
+footer .rights,
+footer .logo {
+    width: 100%;
+  }
+  footer .social {
+    order: 2;
+    align-content: center;
+    margin-bottom: 1rem;
+  }
+  footer .social .container {
+    flex-wrap: nowrap;
+  }
+  footer .rights {
+    align-self: center;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  main .scroll-nav {
+    display: none;
+  }
 }
 
 body {

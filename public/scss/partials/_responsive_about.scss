@@ -1,0 +1,98 @@
+@use "./config"as *;
+
+section.about {
+
+
+  @include responsive(1300) {
+
+    .board {
+      width: 70%;
+    }
+
+  }
+
+  @include responsive(1100) {
+
+    .card .card-title {
+      h1 {
+        font-size: 1.7rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+      }
+    }
+
+    .board {
+      width: 80%;
+    }
+
+  }
+
+  @include responsive(800) {
+
+    .card {
+      .card-title {
+
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+
+      }
+
+      .social {
+        font-size: 1.3rem !important;
+      }
+
+    }
+
+    .board {
+      width: 95%;
+    }
+  }
+
+  @include responsive(580) {
+    .board {
+      .card {
+        width: 49%;
+      }
+    }
+  }
+
+  @include responsive(400) {
+    .board {
+
+      width: 90%;
+
+      .cards-container {
+        justify-content: center;
+      }
+
+
+      .card {
+        width: 100%;
+
+        .card-title {
+
+          h1 {
+            font-size: 2rem;
+          }
+
+          p {
+            font-size: 1.5rem;
+          }
+
+        }
+
+        .social {
+          font-size: 1.5rem !important;
+        }
+
+      }
+    }
+  }
+}
