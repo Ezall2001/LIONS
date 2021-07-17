@@ -20,16 +20,19 @@ const carousel_animation = (curr, next) => {
 
 }
 
+
 const init_events = () => {
-  $('.events .carousel').on('beforeChange', (event, slick, currentSlide, nextSlide) => {
-    carousel_animation(currentSlide, nextSlide)
+  $('.events .carousel')
+    .on('beforeChange', (event, slick, currentSlide, nextSlide) => {
+      carousel_animation(currentSlide, nextSlide)
 
-  });
+    })
+    .on('init ', (event, slick) => {
+      const curr = slick.currentSlide;
+      init_carousel(curr)
+    })
 
-  $('.events .carousel').on('init ', (event, slick) => {
-    const curr = slick.currentSlide;
-    init_carousel(curr)
-  })
+
 }
 
 
@@ -37,11 +40,12 @@ jQuery(() => {
 
   init_events()
 
+
   const carousel_options = {
     centerMode: true,
     infinite: false,
     slidesToShow: 3,
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 5000,
     variableWidth: false,
     adaptiveHeight: true,
@@ -58,6 +62,21 @@ jQuery(() => {
     dotsClass: 'dots',
     prevArrow: '<i class="fas fa-angle-left slick-prev"></i>',
     nextArrow: '<i class="fas fa-angle-right slick-next"></i>',
+    responsive: [{
+      breakpoint: 701,
+      settings: {
+        slidesToShow: 1,
+        adaptiveHeight: false,
+        arrows: false
+      }
+    }, {
+      breakpoint: 440,
+      settings: {
+        slidesToShow: 1,
+        adaptiveHeight: false,
+        arrows: false
+      }
+    }, ]
   }
 
   $('.events .carousel').slick(carousel_options)

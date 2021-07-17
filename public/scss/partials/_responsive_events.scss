@@ -1,0 +1,39 @@
+@use "./config"as*;
+@use "./landing_mixins"as *;
+@use "sass:math";
+
+section.events {
+
+  @include responsive(1000) {
+    .carousel-container {
+      @include set-carousel-responsive(.03, 80vw, 0.8, 3);
+    }
+  }
+
+  @include responsive(940) {
+    .carousel-container {
+      @include set-carousel-responsive(.05, 100vw, 0.8, 3);
+    }
+  }
+
+  @include responsive(800) {
+    .carousel-container {
+      @include set-carousel-responsive(.03, 100vw, 0.8, 3);
+    }
+  }
+
+  @include responsive(700) {
+
+    .text {
+      margin-bottom: 1rem;
+    }
+
+    .carousel-container {
+      @include set-carousel-responsive(.2, 100vw, 1, 1);
+
+
+    }
+  }
+
+
+}

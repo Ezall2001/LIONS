@@ -1,0 +1,34 @@
+@use "./config"as *;
+
+.alert {
+  @include responsive(1100) {
+    width: 95vw;
+    left: 2.5vw;
+  }
+
+  @include responsive(520) {
+    width: 94vw;
+    left: 3vw;
+
+    p {
+      width: 93%;
+      margin-top: 1rem;
+
+      b {
+        margin-right: .6rem;
+      }
+    }
+  }
+
+  @include responsive(350) {
+
+    p {
+      font-size: 1.05rem;
+
+      b {
+        font-size: 1.2rem;
+        margin-right: .3rem;
+      }
+    }
+  }
+}

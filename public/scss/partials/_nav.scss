@@ -29,7 +29,7 @@ nav {
   //TODO: make the mobile version
 
   .logo {
-    @include square(8vw);
+    @include square(8rem);
     @include img-background('../assets/logo.png');
   }
 

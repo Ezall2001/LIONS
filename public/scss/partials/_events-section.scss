@@ -23,27 +23,22 @@ section.events {
   }
 
   .carousel-container {
-    width: 70vw;
-    margin: 0 auto;
+    @include set-carousel-responsive(.05, 80vw, 0.8, 3);
 
+    margin: 0 auto;
 
     .carousel {
       @include flexy('x', center);
     }
 
     .card {
-      $card-width: 13vw;
-
       @include flexy('x', center);
+
       align-items: flex-end;
-      //TODO: fix the width and the aspect ratio or whatever
-      // width: $card-width;
-      height: calc(#{math.div(530,370)} * #{$card-width});
       border-radius: 16px;
       position: relative;
       overflow: hidden;
       padding-bottom: 3rem;
-      margin: 0 3rem;
       transition: transform 1s ease-in-out;
 
       box-shadow:
@@ -150,7 +145,6 @@ section.events {
     }
 
     .slick-list {
-      width: 80%;
       padding: 4rem 0 !important;
     }
 

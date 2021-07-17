@@ -2,10 +2,12 @@
 @use "./partials/responsive_events";
 @use "./partials/responsive_contact";
 @use "./partials/responsive_footer";
+@use "./partials/responsive_alert";
+@use "./partials/responsive_nav";
 @use "./partials/config"as *;
 
 main .scroll-nav {
-  @include responsive(900) {
+  @include responsive(940) {
     display: none;
   }
 }

@@ -1,0 +1,32 @@
+@use "./config"as *;
+
+section.contact {
+
+  @include responsive(950) {
+    form {
+      width: 60%;
+    }
+  }
+
+  @include responsive(650) {
+    form {
+      width: 80%;
+    }
+  }
+
+  @include responsive(470) {
+    form {
+      width: 90%;
+
+      .first-row {
+        flex-direction: column;
+        margin-bottom: 0;
+
+        input {
+          width: 100% !important;
+          margin-bottom: .5rem;
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 @use "./config"as *;
+@use "sass:math";
 
 @mixin section-lion($align:left) {
   position: absolute;
@@ -56,5 +57,27 @@
 
   @include responsive(800) {
     width: 95%;
+  }
+}
+
+
+@mixin set-carousel-responsive($margin-ratio, $container-width, $list-ratio, $card-num) {
+  $list-width: $container-width * $list-ratio;
+  $margin: $margin-ratio * $list-width;
+  $w_h_ratio: math.div(530, 400);
+  $card-width: math.div($list-width - $margin * ($card-num + 1), $card-num);
+
+  $card-height: $w_h_ratio * $card-width;
+
+  width: $container-width;
+
+  .card {
+    height: $card-height;
+    max-height: 70vh;
+    margin: 0 $margin;
+  }
+
+  .slick-list {
+    width: $list-width;
   }
 }

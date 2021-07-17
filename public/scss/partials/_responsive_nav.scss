@@ -1,0 +1,64 @@
+@use "./config"as *;
+
+nav {
+  @include responsive(900) {
+    padding: 1rem 2rem;
+  }
+
+  @include responsive(720) {
+    ul li {
+      margin-left: 3rem;
+    }
+  }
+
+  @include responsive(620) {
+    &::before {
+      content: '';
+      @include apply-filter($mobile-nav-color)
+    }
+
+    background-image: none;
+    flex-direction: column;
+    height: 100vh;
+
+    .logo {
+      align-self: flex-start;
+      z-index: 3;
+    }
+
+
+    ul {
+      flex-direction: column;
+      justify-content: center;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      li {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        border-bottom: 2px dashed $nav-blue;
+        opacity: .6;
+
+        a {
+          color: $nav-blue;
+        }
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+
+        &:hover {
+          opacity: 1;
+
+          &::before {
+            animation: none;
+          }
+        }
+      }
+
+    }
+
+  }
+
+}

@@ -53,16 +53,24 @@ section.about {
     .cards-container {
       @include flexy('x', space-between);
 
+      .hidden {
+        transition: margin-bottom 100ms ease-out;
+        margin-bottom: 0;
+      }
+
     }
 
     .card {
       @include img-background('');
       @include flexy('y', center);
-      aspect-ratio: 9/11;
+
       width: 31.5%;
+      height: 0;
       margin-bottom: 2rem;
       position: relative;
       padding: 0 .5rem;
+      opacity: 0;
+
 
 
       .hover-wrapper {
@@ -142,6 +150,42 @@ section.about {
         }
       }
 
+    }
+
+    .see-more {
+      @include flexy('x', center);
+      width: 100%;
+      margin-top: 1rem;
+      color: $blue;
+      display: none;
+      user-select: none;
+
+
+      .click-container {
+        @include flexy('x', center);
+        padding: 1rem;
+        border: 1px solid $grey;
+        cursor: pointer;
+
+        h2 {
+          font: {
+            size: 1.4rem;
+            weight: 300;
+          }
+        }
+
+        i {
+          font-size: 1.7rem;
+          margin-top: .15rem;
+          margin-left: .5rem;
+        }
+
+
+        &:hover {
+          background-color: $blue;
+          color: $white;
+        }
+      }
     }
   }
 }
