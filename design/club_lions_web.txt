@@ -14,10 +14,8 @@
 
 ---> working on
 ++ custom scroll-bar
-+++ responsive
 
 ---> next moves
-+++ side nav for mobile 
 +++ event landing section
 
 ++ make a trello workflow

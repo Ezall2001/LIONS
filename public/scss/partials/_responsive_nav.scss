@@ -1,29 +1,222 @@
 @use "./config"as *;
+@use "sass:math";
+
+@keyframes filter-animation-in {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(20);
+  }
+}
+
+@keyframes filter-animation-out {
+  0% {
+    opacity: 1;
+    transform: scale(20);
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
 
 nav {
-  @include responsive(900) {
-    padding: 1rem 2rem;
-  }
 
-  @include responsive(720) {
-    ul li {
-      margin-left: 3rem;
-    }
-  }
 
-  @include responsive(620) {
-    &::before {
-      content: '';
-      @include apply-filter($mobile-nav-color)
-    }
+  @include responsive(940) {
 
     background-image: none;
-    flex-direction: column;
-    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1rem 2rem;
+    transition: height .001s linear 1.5s;
+    height: 0;
+    overflow: hidden;
+
+
+    &.active-mobile {
+      transition: height .001s linear;
+      height: 100vh;
+
+
+      .nav-container {
+        pointer-events: all;
+      }
+
+      .hamburgerr {
+        margin: 1rem;
+
+        .line:nth-of-type(1) {
+          transform: translateY(.7rem) rotate(135deg);
+        }
+
+        .line:nth-of-type(3) {
+          opacity: 0;
+          transform: translateY(-.7rem) rotate(135deg);
+        }
+
+        .line:nth-of-type(2) {
+          transform: rotate(-135deg);
+        }
+      }
+
+      .logo {
+        transition: opacity .3s ease-out .7s;
+        opacity: 1;
+      }
+
+      ul {
+        li {
+          opacity: 1;
+          transform: translateY(0);
+
+          &:nth-of-type(1) {
+            transition: opacity .5s ease-out .8s,
+              transform .3s ease-in .8s;
+          }
+
+          &:nth-of-type(2) {
+            transition: opacity .5s ease-out .9s,
+              transform .3s ease-in .85s;
+          }
+
+          &:nth-of-type(3) {
+            transition: opacity .5s ease-out 1s,
+              transform .3s ease-in .88s;
+          }
+
+
+        }
+      }
+    }
+
+
+
+    $hamburgerr-width: 10rem;
+    $offset: math.div($hamburgerr-width, 2);
+
+    .blue-filter,
+    .grey-filter {
+      @include square($hamburgerr-width);
+
+      position: fixed;
+      top: - $offset;
+      right: - $offset;
+      border-radius: 50%;
+
+    }
+
+    .blue-filter {
+      background-color: hsla(231, 40%, 30%, 0.67);
+      backdrop-filter: blur(.3px);
+      box-shadow: -5px 5px 5px 0px hsla(283, 42%, 90%, .2);
+
+      &.open {
+        animation: filter-animation-in .8s ease-in-out .3s forwards;
+      }
+
+      &.close {
+        animation: filter-animation-out .8s ease-in-out forwards;
+        opacity: 1 !important;
+      }
+
+    }
+
+    .grey-filter {
+      background-color: hsla(283, 42%, 82%, 0.2);
+      backdrop-filter: blur(.2px);
+      box-shadow: -5px 5px 3px 1px hsla(283, 42%, 82%, .5);
+
+      &.open {
+        animation: filter-animation-in .8s ease-in-out forwards;
+      }
+
+      &.close {
+        animation: filter-animation-out .8s ease-in-out .3s forwards;
+      }
+    }
+
+    .hamburgerr {
+      @include square($hamburgerr-width);
+      @include flexy('y', center);
+
+      position: fixed;
+      top: - $offset;
+      right: - $offset;
+      z-index: 3;
+      background-color: transparent;
+      border-radius: 50%;
+      overflow: hidden;
+      cursor: pointer;
+      transition: margin .5s ease-in-out .5s;
+
+
+
+      .line {
+        $line-width: 2rem;
+        $line-height: .2rem;
+        $line-margin: .5rem;
+        $half-all-height: math.div($line-height *3, 2);
+        $half-all-margin: math.div($line-margin * 2, 2);
+        $quatrer-offset: math.div($offset, 2) + .2rem;
+
+        $offset-w: $quatrer-offset - math.div($line-width, 2);
+        $offset-h: $quatrer-offset - $half-all-height - $half-all-margin;
+
+        display: block;
+        width: $line-width;
+        height: $line-height;
+        background-color: $white;
+        position: relative;
+        top: $offset-h;
+        right: $offset-w;
+
+        &:nth-of-type(1) {
+          transition: transform .5s ease-out .8s;
+        }
+
+        &:nth-of-type(2) {
+          margin: $line-margin 0;
+          transition: transform .5s ease-out .8s;
+        }
+
+        &:nth-of-type(3) {
+          transition: opacity .8s ease-out .8s,
+            transform .5s ease-out .8s;
+        }
+      }
+
+    }
+
+    .nav-container {
+      pointer-events: none;
+      flex-direction: column;
+
+    }
+
+
 
     .logo {
       align-self: flex-start;
-      z-index: 3;
+      z-index: 4;
+      opacity: 0;
+      transition: opacity .3s ease-out;
     }
 
 
@@ -33,32 +226,73 @@ nav {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
+      opacity: 1;
 
       li {
         font-size: 2.5rem;
+        margin-left: 0;
         margin-bottom: 3rem;
-        border-bottom: 2px dashed $nav-blue;
-        opacity: .6;
+        transform: translateY(-5rem);
+        opacity: 0;
 
         a {
-          color: $nav-blue;
+          text-transform: uppercase;
+          color: $white;
         }
 
         &:last-of-type {
           margin-bottom: 0;
         }
 
-        &:hover {
-          opacity: 1;
+        &:nth-of-type(1) {
+          transition: opacity .15s ease-out .2s,
+            transform .5s ease-in;
 
-          &::before {
-            animation: none;
-          }
+        }
+
+        &:nth-of-type(2) {
+          transition: opacity .2s ease-out .1s,
+            transform .5s ease-in;
+
+
+        }
+
+        &:nth-of-type(3) {
+          transition: opacity .2s ease-out,
+            transform .5s ease-in;
+
+
         }
       }
+
+
 
     }
 
   }
+
+  @include responsive(640) {
+    padding: 0rem;
+  }
+
+  @include responsive(360) {
+    li {
+      margin-bottom: 1.5rem !important;
+
+      &:last-of-type {
+        margin-bottom: 0 !important;
+      }
+
+      a {
+        font-size: 2rem;
+      }
+    }
+
+    .logo {
+      @include square(max(37vw, 110px));
+    }
+  }
+
+
 
 }

@@ -149,7 +149,6 @@ const responsiveBoardCards = () => {
 
   cards.css('height', cardHeight + 'px')
 
-  // TODO: do this on resize end 
 }
 
 const responsiveBoardInjection = (data, prev_win_width, shown, injected) => {
@@ -161,7 +160,6 @@ const responsiveBoardInjection = (data, prev_win_width, shown, injected) => {
     if (win_width <= breakpoint && prev_win_width > breakpoint) {
 
       shown = showLessBoard(data)
-      console.log('new showen: ' + shown)
     } else if (win_width > breakpoint && prev_win_width <= breakpoint) {
 
       if (injected < data.length)
@@ -169,8 +167,6 @@ const responsiveBoardInjection = (data, prev_win_width, shown, injected) => {
 
       shown = showMoreBoard(data, shown)
       shown = showLessBoard(data)
-      console.log('new injected: ' + injected)
-      console.log('new showen: ' + shown)
     }
   })
 
@@ -220,20 +216,20 @@ jQuery(() => {
 
       $(".about .click-container").on('click', () => {
 
-        if (boardInjected < data.length) {
+        if (boardInjected < data.length)
           boardInjected = injectBoard(data, boardInjected)
-          console.log('new injected: ' + boardInjected)
-        }
 
-        console.log('prev shown: ' + boardShown)
 
-        if (boardShown < data.length) {
+
+
+
+        if (boardShown < data.length)
           boardShown = showMoreBoard(data, boardShown)
-          console.log('new showen: ' + boardShown)
-        } else {
+
+        else
           boardShown = showLessBoard(data)
-          console.log('hidden: ' + boardShown)
-        }
+
+
 
       })
 

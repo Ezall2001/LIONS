@@ -16,17 +16,25 @@
   }
 }
 
+
 nav {
   @include apply-gradient(bottom, $blue-filter);
-  @include flexy('x', space-between);
   position: absolute;
   top: 0;
   left: 0;
   z-index: 3;
   width: 100vw;
   padding: 1rem 5rem;
+
   //TODO: add paralex
-  //TODO: make the mobile version
+
+  .nav-container {
+    @include flexy('x', space-between);
+    width: 100%;
+    height: 100%;
+  }
+
+
 
   .logo {
     @include square(8rem);

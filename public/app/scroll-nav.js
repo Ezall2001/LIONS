@@ -51,10 +51,31 @@ jQuery(() => {
 
   })
 
+  $('nav .hamburgerr').on('click', () => {
+    $('nav').toggleClass('active-mobile')
+    $('nav .grey-filter, nav .blue-filter').toggleClass('open')
+    $('nav .grey-filter, nav .blue-filter').toggleClass('close')
+
+    if ($('nav').hasClass('active-mobile')) {
+      $('body').css('overflowY', 'hidden')
+    } else {
+      $('body').css('overflowY', 'scroll')
+    }
+  })
+
   $('nav a').on('click', function (event) {
     event.preventDefault()
-    const section_query = `.${$(this).attr('href')}`
-    scroll_animation(section_query)
+
+    let delta = 0;
+    if ($(window).width() <= 940) {
+      $('nav .hamburgerr').click()
+      delta = 600
+
+    }
+    setTimeout(() => {
+      const section_query = `.${$(this).attr('href')}`
+      scroll_animation(section_query)
+    }, delta)
   })
 
   $('header .call-to-action').on('click', () => {
