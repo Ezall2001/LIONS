@@ -4,6 +4,9 @@ const init_carousel = curr => {
   query = `.events .carousel .card:nth-of-type(${curr})`
   $(query)
     .toggleClass('card-highlight-center')
+
+  const quote = $(query).attr('data-quotes')
+  $('.events .text p').html(quote)
 }
 
 const carousel_animation = (curr, next) => {
@@ -17,6 +20,15 @@ const carousel_animation = (curr, next) => {
   query = `.events .carousel .card:nth-of-type(${next})`
   $(query)
     .toggleClass('card-highlight-center')
+
+  const quote = $(query).attr('data-quotes')
+  $('.events .text p')
+    .html(quote)
+    .removeClass('quote')
+
+  setTimeout(() => {
+    $('.events .text p').addClass('quote')
+  }, 50)
 
 }
 
@@ -45,7 +57,7 @@ jQuery(() => {
     centerMode: true,
     infinite: false,
     slidesToShow: 3,
-    // autoplay: true,
+    autoplay: true,
     autoplaySpeed: 5000,
     variableWidth: false,
     adaptiveHeight: true,

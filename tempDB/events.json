@@ -1,13 +1,18 @@
 [{
   "title": "Lilet El Rahma",
-  "date": "27 avril"
+  "date": "27 avril",
+  "quotes": "Un repas au plus démunis."
 }, {
   "title": "Remise De Charte",
-  "date": "28 mai"
+  "date": "28 mai",
+  "quotes": "Le jour où tout a commencé."
 }, {
   "title": "Coming Soon",
-  "date": "TBA"
+  "date": "TBA",
+  "quotes": "Coming Soon"
 }, {
   "title": "Coming Soon",
-  "date": "TBA"
+  "date": "TBA",
+  "quotes": "Coming Soon"
+
 }]

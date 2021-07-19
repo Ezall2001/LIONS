@@ -60,7 +60,7 @@ const injectEvents = data => {
     .forEach(card => {
 
       const newCard = `
-      <div class="card">
+      <div class="card" data-quotes="${card.quotes}">
       <div class = "card-background" 
        style = "background-image:url(${card.background})" > </div>
       <div class="card-filter"></div>

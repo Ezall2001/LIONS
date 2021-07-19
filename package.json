@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "sass --watch ./public/scss:./public/css"
+    "watch": "sass ./public/scss:./public/css --watch  --style compressed",
+    "prefix": "postcss ./public/css/main.css --use autoprefixer -d ./public/css/"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +16,11 @@
     "sass": "^1.35.2",
     "slick-carousel": "^1.8.1",
     "validator": "^13.6.0"
-  }
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.3.1",
+    "postcss": "^8.3.5",
+    "postcss-cli": "^8.3.1"
+  },
+  "browserslist": "last 4 versions"
 }
